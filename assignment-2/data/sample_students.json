@@ -1,0 +1,293 @@
+{
+ "_note": "FICTIONAL DEMONSTRATION DATA - not real students or real institutional data.",
+ "students": [
+  {
+   "student_id": "MIM25001",
+   "name": "Aarav Mehta",
+   "email": "aarav.mehta@meridian-demo.example",
+   "programme": "PGDM (Big Data Analytics)",
+   "semester": 3,
+   "cgpa": 3.62,
+   "attendance_pct": 91,
+   "advisor": "Dr. S. Rao",
+   "batch": "2025-27",
+   "fee": {
+    "total": 450000,
+    "paid": 450000,
+    "status": "Paid",
+    "due_date": "2026-08-15",
+    "last_payment_date": "2026-08-02"
+   },
+   "scholarship": {
+    "name": "Merit Excellence Award",
+    "status": "Approved",
+    "amount": 50000,
+    "remarks": "Awarded for Semester 3 as fee adjustment"
+   }
+  },
+  {
+   "student_id": "MIM25002",
+   "name": "Diya Nair",
+   "email": "diya.nair@meridian-demo.example",
+   "programme": "PGDM (Artificial Intelligence & Data Science)",
+   "semester": 3,
+   "cgpa": 3.41,
+   "attendance_pct": 87,
+   "advisor": "Dr. P. Sharma",
+   "batch": "2025-27",
+   "fee": {
+    "total": 450000,
+    "paid": 300000,
+    "status": "Partially Paid",
+    "due_date": "2026-11-30",
+    "last_payment_date": "2026-08-10"
+   },
+   "scholarship": {
+    "name": "Merit Excellence Award",
+    "status": "Under Review",
+    "amount": 50000,
+    "remarks": "Committee review in progress"
+   }
+  },
+  {
+   "student_id": "MIM25003",
+   "name": "Rohan Verma",
+   "email": "rohan.verma@meridian-demo.example",
+   "programme": "PGDM (Marketing)",
+   "semester": 1,
+   "cgpa": 3.05,
+   "attendance_pct": 79,
+   "advisor": "Prof. A. Das",
+   "batch": "2025-27",
+   "fee": {
+    "total": 420000,
+    "paid": 100000,
+    "status": "Overdue",
+    "due_date": "2026-09-15",
+    "last_payment_date": "2026-07-20"
+   },
+   "scholarship": {
+    "name": "Need-Based Support Grant",
+    "status": "Documents Pending",
+    "amount": 60000,
+    "remarks": "Income proof not yet uploaded"
+   }
+  },
+  {
+   "student_id": "MIM25004",
+   "name": "Ananya Iyer",
+   "email": "ananya.iyer@meridian-demo.example",
+   "programme": "PGDM (Finance)",
+   "semester": 2,
+   "cgpa": 3.78,
+   "attendance_pct": 94,
+   "advisor": "Prof. K. Menon",
+   "batch": "2025-27",
+   "fee": {
+    "total": 420000,
+    "paid": 420000,
+    "status": "Paid",
+    "due_date": "2026-08-15",
+    "last_payment_date": "2026-07-28"
+   },
+   "scholarship": {
+    "name": "None",
+    "status": "Not Applied",
+    "amount": 0,
+    "remarks": "No scholarship application on record"
+   }
+  },
+  {
+   "student_id": "MIM25005",
+   "name": "Kabir Singh",
+   "email": "kabir.singh@meridian-demo.example",
+   "programme": "PGDM (Human Resources)",
+   "semester": 4,
+   "cgpa": 3.12,
+   "attendance_pct": 82,
+   "advisor": "Dr. L. Thomas",
+   "batch": "2025-27",
+   "fee": {
+    "total": 400000,
+    "paid": 380000,
+    "status": "Partially Paid",
+    "due_date": "2026-12-15",
+    "last_payment_date": "2026-08-20"
+   },
+   "scholarship": {
+    "name": "Sports Achievement Scholarship",
+    "status": "Approved",
+    "amount": 40000,
+    "remarks": "State-level certificate verified"
+   }
+  },
+  {
+   "student_id": "MIM25006",
+   "name": "Meera Pillai",
+   "email": "meera.pillai@meridian-demo.example",
+   "programme": "PGDM (Big Data Analytics)",
+   "semester": 1,
+   "cgpa": 3.55,
+   "attendance_pct": 89,
+   "advisor": "Dr. S. Rao",
+   "batch": "2025-27",
+   "fee": {
+    "total": 450000,
+    "paid": 225000,
+    "status": "Partially Paid",
+    "due_date": "2026-12-01",
+    "last_payment_date": "2026-08-05"
+   },
+   "scholarship": {
+    "name": "Women in Data Fellowship",
+    "status": "Submitted",
+    "amount": 75000,
+    "remarks": "Application received, awaiting document check"
+   }
+  },
+  {
+   "student_id": "MIM25007",
+   "name": "Arjun Reddy",
+   "email": "arjun.reddy@meridian-demo.example",
+   "programme": "PGDM (Artificial Intelligence & Data Science)",
+   "semester": 2,
+   "cgpa": 3.18,
+   "attendance_pct": 76,
+   "advisor": "Dr. P. Sharma",
+   "batch": "2025-27",
+   "fee": {
+    "total": 450000,
+    "paid": 0,
+    "status": "Unpaid",
+    "due_date": "2026-10-10",
+    "last_payment_date": ""
+   },
+   "scholarship": {
+    "name": "Merit Excellence Award",
+    "status": "Rejected",
+    "amount": 50000,
+    "remarks": "CGPA below the 3.5 cut-off"
+   }
+  },
+  {
+   "student_id": "MIM25008",
+   "name": "Sana Khan",
+   "email": "sana.khan@meridian-demo.example",
+   "programme": "PGDM (Marketing)",
+   "semester": 3,
+   "cgpa": 3.33,
+   "attendance_pct": 85,
+   "advisor": "Prof. A. Das",
+   "batch": "2025-27",
+   "fee": {
+    "total": 420000,
+    "paid": 420000,
+    "status": "Paid",
+    "due_date": "2026-08-15",
+    "last_payment_date": "2026-08-01"
+   },
+   "scholarship": {
+    "name": "Need-Based Support Grant",
+    "status": "Approved",
+    "amount": 60000,
+    "remarks": "Awarded for Semester 3 as fee adjustment"
+   }
+  },
+  {
+   "student_id": "MIM25009",
+   "name": "Vikram Joshi",
+   "email": "vikram.joshi@meridian-demo.example",
+   "programme": "PGDM (Finance)",
+   "semester": 4,
+   "cgpa": 3.27,
+   "attendance_pct": 80,
+   "advisor": "Prof. K. Menon",
+   "batch": "2025-27",
+   "fee": {
+    "total": 420000,
+    "paid": 400000,
+    "status": "Overdue",
+    "due_date": "2026-09-20",
+    "last_payment_date": "2026-08-25"
+   },
+   "scholarship": {
+    "name": "None",
+    "status": "Not Applied",
+    "amount": 0,
+    "remarks": "No scholarship application on record"
+   }
+  },
+  {
+   "student_id": "MIM25010",
+   "name": "Ishita Banerjee",
+   "email": "ishita.banerjee@meridian-demo.example",
+   "programme": "PGDM (Human Resources)",
+   "semester": 2,
+   "cgpa": 3.66,
+   "attendance_pct": 92,
+   "advisor": "Dr. L. Thomas",
+   "batch": "2025-27",
+   "fee": {
+    "total": 400000,
+    "paid": 400000,
+    "status": "Paid",
+    "due_date": "2026-08-15",
+    "last_payment_date": "2026-07-30"
+   },
+   "scholarship": {
+    "name": "Merit Excellence Award",
+    "status": "Under Review",
+    "amount": 50000,
+    "remarks": "Committee review in progress"
+   }
+  },
+  {
+   "student_id": "MIM25011",
+   "name": "Neil Fernandes",
+   "email": "neil.fernandes@meridian-demo.example",
+   "programme": "PGDM (Big Data Analytics)",
+   "semester": 4,
+   "cgpa": 3.71,
+   "attendance_pct": 93,
+   "advisor": "Dr. S. Rao",
+   "batch": "2025-27",
+   "fee": {
+    "total": 450000,
+    "paid": 450000,
+    "status": "Paid",
+    "due_date": "2026-08-15",
+    "last_payment_date": "2026-07-25"
+   },
+   "scholarship": {
+    "name": "Industry Partner Scholarship",
+    "status": "Approved",
+    "amount": 80000,
+    "remarks": "Linked to industry project"
+   }
+  },
+  {
+   "student_id": "MIM25012",
+   "name": "Priya Kulkarni",
+   "email": "priya.kulkarni@meridian-demo.example",
+   "programme": "PGDM (Artificial Intelligence & Data Science)",
+   "semester": 1,
+   "cgpa": 3.5,
+   "attendance_pct": 88,
+   "advisor": "Dr. P. Sharma",
+   "batch": "2025-27",
+   "fee": {
+    "total": 450000,
+    "paid": 150000,
+    "status": "Partially Paid",
+    "due_date": "2026-11-15",
+    "last_payment_date": "2026-08-12"
+   },
+   "scholarship": {
+    "name": "Women in Data Fellowship",
+    "status": "Documents Pending",
+    "amount": 75000,
+    "remarks": "Marksheet copy requested"
+   }
+  }
+ ]
+}
