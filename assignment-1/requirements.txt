@@ -1,0 +1,21 @@
+# Core app
+streamlit>=1.50
+langgraph>=1.0
+langchain-core>=1.0
+langchain-groq>=1.0
+python-dotenv>=1.0
+pandas>=2.2
+pymupdf>=1.24
+
+# Vector store + embeddings
+chromadb>=1.0
+# CPU-only PyTorch keeps the install small enough for free hosting (CUDA wheels are ~2 GB)
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch
+sentence-transformers>=3.0
+
+# Chroma needs SQLite >= 3.35; some hosts ship an older one (Linux only wheel)
+pysqlite3-binary; sys_platform == "linux"
+
+# Testing
+pytest>=8.0

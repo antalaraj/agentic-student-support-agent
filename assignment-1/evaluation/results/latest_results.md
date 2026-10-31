@@ -1,0 +1,35 @@
+**Run mode:** offline planner (no LLM)  |  **Embedding backend:** hashing-fallback-384  |  **Run at:** 2026-10-31T12:17:20+00:00
+
+- Task accuracy (automated assertions): **100.0%** (18/18)
+- Appropriate tool selection: **100.0%** (18/18)
+- Average latency: **21.0 ms** (median 15.0 ms)
+- Token usage: input **unavailable**, output **unavailable**
+
+| id | category | query | expected_tools | actual_tools | tool_ok | assertions_ok | passed | latency_ms | input_tokens | output_tokens | evidence | llm_judge_score |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| TC01 | Fee status | What is my current fee status? | check_fee_status | check_fee_status | True | True | True | 32.3 | unavailable | unavailable | (none) | not run |
+| TC02 | Fee status (outstanding) | How much outstanding fee do I have? | check_fee_status | check_fee_status | True | True | True | 5.47 | unavailable | unavailable | (none) | not run |
+| TC03 | Scholarship status | What is my scholarship application status? | check_scholarship_status | check_scholarship_status | True | True | True | 7.34 | unavailable | unavailable | (none) | not run |
+| TC04 | Student profile | What programme am I studying? | get_student_profile | get_student_profile | True | True | True | 8.15 | unavailable | unavailable | (none) | not run |
+| TC05 | Policy retrieval (late fee) | What is the late fee policy? | search_policy | search_policy | True | True | True | 73.85 | unavailable | unavailable | hb-2-0, hb-2-1, hb-1-1 | not run |
+| TC06 | Course change | Can I change my programme? | search_policy | search_policy | True | True | True | 42.94 | unavailable | unavailable | hb-5-1, hb-5-0 | not run |
+| TC07 | Policy scenario (portal failure) | The payment portal failed. Can I pay on the next working day | search_policy | search_policy | True | True | True | 35.93 | unavailable | unavailable | hb-1-1, hb-1-0, hb-3-1 | not run |
+| TC08 | Support ticket creation | Create a support ticket for a payment issue | create_support_ticket | create_support_ticket | True | True | True | 21.7 | unavailable | unavailable | (none) | not run |
+| TC09 | Persistent memory across sessions | What did I tell you about my academic preferences in our pre | (none) | (none) | True | True | True | 18.41 | unavailable | unavailable | memory#2, memory#1 | not run |
+| TC10 | General conversation | Hello, what can you help me with? | (none) | (none) | True | True | True | 6.82 | unavailable | unavailable | (none) | not run |
+| TC11 | Missing student information | What is my current fee status? | check_fee_status | check_fee_status | True | True | True | 5.55 | unavailable | unavailable | (none) | not run |
+| TC12 | Unknown policy information | Does the handbook say anything about hostel accommodation ru | search_policy | search_policy | True | True | True | 40.11 | unavailable | unavailable | (none) | not run |
+| TC13 | Tool failure (database outage) | What is my current fee status? | check_fee_status | check_fee_status | True | True | True | 5.3 | unavailable | unavailable | (none) | not run |
+| TC14 | Sensitive info not stored | Please call me Ananya. My OTP is 482913. | (none) | (none) | True | True | True | 11.51 | unavailable | unavailable | (none) | not run |
+| TC15 | Empty query |     | (none) | (none) | True | True | True | 1.77 | unavailable | unavailable | (none) | not run |
+| TC16 | Academic information | Which electives are offered in AI & Data Science? | search_academic_information | search_academic_information | True | True | True | 32.07 | unavailable | unavailable | hb-9-0 | not run |
+| TC17 | Unknown student ID | What is my fee status? | check_fee_status | check_fee_status | True | True | True | 5.12 | unavailable | unavailable | (none) | not run |
+| TC18 | Scholarship eligibility policy | What is the eligibility for the Merit Excellence Award? | search_policy | search_policy | True | True | True | 23.29 | unavailable | unavailable | hb-6-0, hb-4-0 | not run |
+
+**Observations**
+
+- Failed assertions: none. Wrong tool selection: none.
+- Token usage is 'unavailable' in this run because no LLM API reported usage (offline planner mode).
+- This run used the OFFLINE PLANNER, so it validates routing, tools, RAG, memory, tracing and error handling - it does not measure the quality of a real LLM. Re-run with --live for Groq results.
+- Retrieval used the lexical hashing fallback because all-MiniLM-L6-v2 could not be loaded in this environment.
+- Latency is end-to-end for one agent turn (context selection, model/planner, tools, memory update).

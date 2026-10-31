@@ -1,0 +1,20 @@
+# Core Multi-Agent Orchestration
+langgraph>=1.0
+langchain-core>=1.0
+langchain-groq>=1.0
+python-dotenv>=1.0
+pydantic>=2.0
+
+# User Interface
+streamlit>=1.50
+pandas>=2.2
+
+# Knowledge & Retrieval
+chromadb>=1.0
+sentence-transformers>=3.0
+pymupdf>=1.24
+rank-bm25>=0.2.2
+
+# Testing & Evaluation
+pytest>=8.0
+pytest-asyncio>=0.23

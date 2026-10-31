@@ -1,0 +1,649 @@
+{
+ "summary": {
+  "mode": "offline planner (no LLM)",
+  "embedder": "hashing-fallback-384",
+  "run_at": "2026-10-31T12:17:20+00:00",
+  "total": 18,
+  "passed": 18,
+  "accuracy_pct": 100.0,
+  "tool_ok": 18,
+  "tool_selection_pct": 100.0,
+  "avg_latency_ms": 21.0,
+  "median_latency_ms": 15.0,
+  "total_input_tokens": "unavailable",
+  "total_output_tokens": "unavailable",
+  "observations": [
+   "Failed assertions: none. Wrong tool selection: none.",
+   "Token usage is 'unavailable' in this run because no LLM API reported usage (offline planner mode).",
+   "This run used the OFFLINE PLANNER, so it validates routing, tools, RAG, memory, tracing and error handling - it does not measure the quality of a real LLM. Re-run with --live for Groq results.",
+   "Retrieval used the lexical hashing fallback because all-MiniLM-L6-v2 could not be loaded in this environment.",
+   "Latency is end-to-end for one agent turn (context selection, model/planner, tools, memory update)."
+  ]
+ },
+ "results": [
+  {
+   "id": "TC01",
+   "category": "Fee status",
+   "query": "What is my current fee status?",
+   "student_id": "MIM25002",
+   "expected_tools": [
+    "check_fee_status"
+   ],
+   "actual_tools": [
+    "check_fee_status"
+   ],
+   "tool_ok": true,
+   "assertions_ok": true,
+   "checks": [
+    {
+     "check": "contains '150,000'",
+     "ok": true
+    },
+    {
+     "check": "contains 'Partially Paid'",
+     "ok": true
+    },
+    {
+     "check": "status is success",
+     "ok": true
+    }
+   ],
+   "passed": true,
+   "latency_ms": 32.3,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable",
+   "evidence": "(none)",
+   "status": "success",
+   "response": "Your fee status is **Partially Paid**. Total fee \u20b9450,000, paid \u20b9300,000, outstanding \u20b9150,000. Next due date: 2026-11-30.",
+   "execution_id": "exec-20261031-121719-1900af"
+  },
+  {
+   "id": "TC02",
+   "category": "Fee status (outstanding)",
+   "query": "How much outstanding fee do I have?",
+   "student_id": "MIM25003",
+   "expected_tools": [
+    "check_fee_status"
+   ],
+   "actual_tools": [
+    "check_fee_status"
+   ],
+   "tool_ok": true,
+   "assertions_ok": true,
+   "checks": [
+    {
+     "check": "contains '320,000'",
+     "ok": true
+    },
+    {
+     "check": "status is success",
+     "ok": true
+    }
+   ],
+   "passed": true,
+   "latency_ms": 5.47,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable",
+   "evidence": "(none)",
+   "status": "success",
+   "response": "Your fee status is **Overdue**. Total fee \u20b9420,000, paid \u20b9100,000, outstanding \u20b9320,000. Next due date: 2026-09-15.",
+   "execution_id": "exec-20261031-121719-10f2f4"
+  },
+  {
+   "id": "TC03",
+   "category": "Scholarship status",
+   "query": "What is my scholarship application status?",
+   "student_id": "MIM25007",
+   "expected_tools": [
+    "check_scholarship_status"
+   ],
+   "actual_tools": [
+    "check_scholarship_status"
+   ],
+   "tool_ok": true,
+   "assertions_ok": true,
+   "checks": [
+    {
+     "check": "contains 'Merit Excellence Award'",
+     "ok": true
+    },
+    {
+     "check": "contains 'Rejected'",
+     "ok": true
+    },
+    {
+     "check": "status is success",
+     "ok": true
+    }
+   ],
+   "passed": true,
+   "latency_ms": 7.34,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable",
+   "evidence": "(none)",
+   "status": "success",
+   "response": "Scholarship: **Merit Excellence Award** - application status **Rejected** (CGPA below the 3.5 cut-off).",
+   "execution_id": "exec-20261031-121719-011ea5"
+  },
+  {
+   "id": "TC04",
+   "category": "Student profile",
+   "query": "What programme am I studying?",
+   "student_id": "MIM25005",
+   "expected_tools": [
+    "get_student_profile"
+   ],
+   "actual_tools": [
+    "get_student_profile"
+   ],
+   "tool_ok": true,
+   "assertions_ok": true,
+   "checks": [
+    {
+     "check": "contains 'PGDM (Human Resources)'",
+     "ok": true
+    },
+    {
+     "check": "status is success",
+     "ok": true
+    }
+   ],
+   "passed": true,
+   "latency_ms": 8.15,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable",
+   "evidence": "(none)",
+   "status": "success",
+   "response": "You are Kabir Singh (MIM25005), studying **PGDM (Human Resources)**, semester 4. CGPA 3.12, attendance 82.0%, faculty advisor Dr. L. Thomas.",
+   "execution_id": "exec-20261031-121719-ef05d9"
+  },
+  {
+   "id": "TC05",
+   "category": "Policy retrieval (late fee)",
+   "query": "What is the late fee policy?",
+   "student_id": "MIM25001",
+   "expected_tools": [
+    "search_policy"
+   ],
+   "actual_tools": [
+    "search_policy"
+   ],
+   "tool_ok": true,
+   "assertions_ok": true,
+   "checks": [
+    {
+     "check": "contains any of ['Rs. 200', '200 per day']",
+     "ok": true
+    },
+    {
+     "check": "status is success",
+     "ok": true
+    },
+    {
+     "check": "retrieved chunk 'hb-2*'",
+     "ok": true
+    }
+   ],
+   "passed": true,
+   "latency_ms": 73.85,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable",
+   "evidence": "hb-2-0, hb-2-1, hb-1-1",
+   "status": "success",
+   "response": "According to the student handbook:\n\u2022 Clause 2.1 A grace period of 7 calendar days applies after the due date. No late fee is charged during the grace period.\n\u2022 Clause 2.2 After the grace period a late fee of Rs. 200 per day is charged on the overdue instalment. The total late fee is capped at 10 percent of the overdue amount.\n\n(Source: Section 2: Late Fee Policy)",
+   "execution_id": "exec-20261031-121719-667392"
+  },
+  {
+   "id": "TC06",
+   "category": "Course change",
+   "query": "Can I change my programme?",
+   "student_id": "MIM25006",
+   "expected_tools": [
+    "search_policy"
+   ],
+   "actual_tools": [
+    "search_policy"
+   ],
+   "tool_ok": true,
+   "assertions_ok": true,
+   "checks": [
+    {
+     "check": "contains any of ['only once', 'end of semester 1']",
+     "ok": true
+    },
+    {
+     "check": "status is success",
+     "ok": true
+    },
+    {
+     "check": "retrieved chunk 'hb-5*'",
+     "ok": true
+    }
+   ],
+   "passed": true,
+   "latency_ms": 42.94,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable",
+   "evidence": "hb-5-1, hb-5-0",
+   "status": "success",
+   "response": "According to the student handbook:\n\u2022 Clause 5.5 No programme change is permitted in semesters 2, 3 or 4. Any fee difference between programmes must be paid before the change takes effect.\n\u2022 Clause 5.3 Programme (specialisation) change: allowed only once, and only at the end of semester 1. The request must be submitted within 1 week of the semester 1 results.\n\n(Source: Section 5: Course and Programme Change Rules)",
+   "execution_id": "exec-20261031-121719-4fd10b"
+  },
+  {
+   "id": "TC07",
+   "category": "Policy scenario (portal failure)",
+   "query": "The payment portal failed. Can I pay on the next working day?",
+   "student_id": "MIM25002",
+   "expected_tools": [
+    "search_policy"
+   ],
+   "actual_tools": [
+    "search_policy"
+   ],
+   "tool_ok": true,
+   "assertions_ok": true,
+   "checks": [
+    {
+     "check": "contains any of ['next working day']",
+     "ok": true
+    },
+    {
+     "check": "status is success",
+     "ok": true
+    },
+    {
+     "check": "retrieved chunk 'hb-1*'",
+     "ok": true
+    }
+   ],
+   "passed": true,
+   "latency_ms": 35.93,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable",
+   "evidence": "hb-1-1, hb-1-0, hb-3-1",
+   "status": "success",
+   "response": "According to the student handbook:\n\u2022 Clause 1.5 Payment portal failure: if an online payment fails, the student must not retry repeatedly. The student should note the transaction reference, keep a screenshot, and raise a support ticket in the category fee_payment within 24 hours. If the Accounts Office verifies that the failure was caused by the portal, the payment may be made on the next working day and no late fee will be charged for that delay.\n\u2022 Clause 1.6 If money is debited but the portal shows failure, the amount is reconciled or refunded to the original account within 5 to 7 working days.\n\n(Source: Section 1: Fee Payment Rules)",
+   "execution_id": "exec-20261031-121719-b687bf"
+  },
+  {
+   "id": "TC08",
+   "category": "Support ticket creation",
+   "query": "Create a support ticket for a payment issue",
+   "student_id": "MIM25009",
+   "expected_tools": [
+    "create_support_ticket"
+   ],
+   "actual_tools": [
+    "create_support_ticket"
+   ],
+   "tool_ok": true,
+   "assertions_ok": true,
+   "checks": [
+    {
+     "check": "contains 'TKT-'",
+     "ok": true
+    },
+    {
+     "check": "status is success",
+     "ok": true
+    },
+    {
+     "check": "ticket row exists in DB and ID is in the reply",
+     "ok": true
+    }
+   ],
+   "passed": true,
+   "latency_ms": 21.7,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable",
+   "evidence": "(none)",
+   "status": "success",
+   "response": "I've created your support ticket **TKT-20261031-EDC35A** (category: fee_payment). Expected response: within 2 working days (1 working day for urgent fee/exam matters).",
+   "execution_id": "exec-20261031-121720-ea4eba"
+  },
+  {
+   "id": "TC09",
+   "category": "Persistent memory across sessions",
+   "query": "What did I tell you about my academic preferences in our previous session?",
+   "student_id": "MIM25011",
+   "expected_tools": [],
+   "actual_tools": [],
+   "tool_ok": true,
+   "assertions_ok": true,
+   "checks": [
+    {
+     "check": "contains any of ['cloud data engineering', 'cloud data', 'data engineering']",
+     "ok": true
+    },
+    {
+     "check": "status is success",
+     "ok": true
+    },
+    {
+     "check": "\u22651 memory item(s) used",
+     "ok": true
+    }
+   ],
+   "passed": true,
+   "latency_ms": 18.41,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable",
+   "evidence": "memory#2, memory#1",
+   "status": "success",
+   "response": "Here is what I remember from our earlier conversations:\n\u2022 Preference: cloud data engineering electives\n\u2022 Preferred name: Neil",
+   "execution_id": "exec-20261031-121720-64c388"
+  },
+  {
+   "id": "TC10",
+   "category": "General conversation",
+   "query": "Hello, what can you help me with?",
+   "student_id": "MIM25004",
+   "expected_tools": [],
+   "actual_tools": [],
+   "tool_ok": true,
+   "assertions_ok": true,
+   "checks": [
+    {
+     "check": "contains any of ['fee', 'scholarship', 'help']",
+     "ok": true
+    },
+    {
+     "check": "status is success",
+     "ok": true
+    }
+   ],
+   "passed": true,
+   "latency_ms": 6.82,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable",
+   "evidence": "(none)",
+   "status": "success",
+   "response": "I can check your fee and scholarship status, show your profile, search the student handbook (fees, late fees, attendance, course changes, exams) and raise support tickets.",
+   "execution_id": "exec-20261031-121720-7e0350"
+  },
+  {
+   "id": "TC11",
+   "category": "Missing student information",
+   "query": "What is my current fee status?",
+   "student_id": null,
+   "expected_tools": [
+    "check_fee_status"
+   ],
+   "actual_tools": [
+    "check_fee_status"
+   ],
+   "tool_ok": true,
+   "assertions_ok": true,
+   "checks": [
+    {
+     "check": "contains any of ['select your student ID', 'student ID', 'student id']",
+     "ok": true
+    },
+    {
+     "check": "does not contain '\u20b9'",
+     "ok": true
+    },
+    {
+     "check": "status is success",
+     "ok": true
+    }
+   ],
+   "passed": true,
+   "latency_ms": 5.55,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable",
+   "evidence": "(none)",
+   "status": "success",
+   "response": "I need to know who you are first. Please select your student ID in the sidebar.",
+   "execution_id": "exec-20261031-121720-a65156"
+  },
+  {
+   "id": "TC12",
+   "category": "Unknown policy information",
+   "query": "Does the handbook say anything about hostel accommodation rules?",
+   "student_id": "MIM25001",
+   "expected_tools": [
+    "search_policy"
+   ],
+   "actual_tools": [
+    "search_policy"
+   ],
+   "tool_ok": true,
+   "assertions_ok": true,
+   "checks": [
+    {
+     "check": "contains any of [\"couldn't find\", 'Student Services']",
+     "ok": true
+    },
+    {
+     "check": "does not contain 'Clause'",
+     "ok": true
+    },
+    {
+     "check": "status is success",
+     "ok": true
+    },
+    {
+     "check": "no chunks retrieved (insufficient evidence)",
+     "ok": true
+    }
+   ],
+   "passed": true,
+   "latency_ms": 40.11,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable",
+   "evidence": "(none)",
+   "status": "success",
+   "response": "I couldn't find this in the student handbook, so I can't give a reliable answer. Please contact the Student Services Office (student.services@meridian-demo.example).",
+   "execution_id": "exec-20261031-121720-417e9e"
+  },
+  {
+   "id": "TC13",
+   "category": "Tool failure (database outage)",
+   "query": "What is my current fee status?",
+   "student_id": "MIM25008",
+   "expected_tools": [
+    "check_fee_status"
+   ],
+   "actual_tools": [
+    "check_fee_status"
+   ],
+   "tool_ok": true,
+   "assertions_ok": true,
+   "checks": [
+    {
+     "check": "contains any of [\"couldn't complete\", 'Sorry']",
+     "ok": true
+    },
+    {
+     "check": "does not contain '\u20b9'",
+     "ok": true
+    },
+    {
+     "check": "status is success",
+     "ok": true
+    }
+   ],
+   "passed": true,
+   "latency_ms": 5.3,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable",
+   "evidence": "(none)",
+   "status": "success",
+   "response": "Sorry, I couldn't complete that: The student database is temporarily unavailable. Please try again, or contact Student Services Office (student.services@meridian-demo.example).",
+   "execution_id": "exec-20261031-121720-d3caa6"
+  },
+  {
+   "id": "TC14",
+   "category": "Sensitive info not stored",
+   "query": "Please call me Ananya. My OTP is 482913.",
+   "student_id": "MIM25004",
+   "expected_tools": [],
+   "actual_tools": [],
+   "tool_ok": true,
+   "assertions_ok": true,
+   "checks": [
+    {
+     "check": "status is success",
+     "ok": true
+    },
+    {
+     "check": "memory contains 'Ananya'",
+     "ok": true
+    },
+    {
+     "check": "memory does NOT contain '482913'",
+     "ok": true
+    },
+    {
+     "check": "memory does NOT contain 'OTP'",
+     "ok": true
+    }
+   ],
+   "passed": true,
+   "latency_ms": 11.51,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable",
+   "evidence": "(none)",
+   "status": "success",
+   "response": "Please don't share passwords, OTPs or card details with me. I won't store them, and staff will never ask for them in chat.",
+   "execution_id": "exec-20261031-121720-0081de"
+  },
+  {
+   "id": "TC15",
+   "category": "Empty query",
+   "query": "   ",
+   "student_id": "MIM25001",
+   "expected_tools": [],
+   "actual_tools": [],
+   "tool_ok": true,
+   "assertions_ok": true,
+   "checks": [
+    {
+     "check": "contains any of ['type a question']",
+     "ok": true
+    },
+    {
+     "check": "status in ['empty_query']",
+     "ok": true
+    }
+   ],
+   "passed": true,
+   "latency_ms": 1.77,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable",
+   "evidence": "(none)",
+   "status": "empty_query",
+   "response": "Please type a question - for example, \u201cWhat is my current fee status?\u201d",
+   "execution_id": "exec-20261031-121720-1a20d8"
+  },
+  {
+   "id": "TC16",
+   "category": "Academic information",
+   "query": "Which electives are offered in AI & Data Science?",
+   "student_id": "MIM25012",
+   "expected_tools": [
+    "search_academic_information"
+   ],
+   "actual_tools": [
+    "search_academic_information"
+   ],
+   "tool_ok": true,
+   "assertions_ok": true,
+   "checks": [
+    {
+     "check": "contains any of ['Generative AI', 'Computer Vision']",
+     "ok": true
+    },
+    {
+     "check": "status is success",
+     "ok": true
+    },
+    {
+     "check": "retrieved chunk 'hb-9*'",
+     "ok": true
+    }
+   ],
+   "passed": true,
+   "latency_ms": 32.07,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable",
+   "evidence": "hb-9-0",
+   "status": "success",
+   "response": "According to the student handbook:\n\u2022 Clause 9.3 PGDM (Artificial Intelligence & Data Science) core courses: Statistics for Analytics, Python for Data Science, Machine Learning, Deep Learning, Agentic AI Engineering, MLOps. Electives: Generative AI Applications, Computer Vision, Responsible AI.\n\u2022 Clause 9.2 PGDM (Big Data Analytics) core courses: Statistics for Analytics, Python for Data Science, Databases and Big Data Platforms (Hadoop and Spark), Machine Learning, Data Visualisation. Electives: Natural Language Processing, Time Series Forecasting, Cloud Data Engineering.\n\n(Source: Section 9: Academic Programmes and Courses)",
+   "execution_id": "exec-20261031-121720-70c313"
+  },
+  {
+   "id": "TC17",
+   "category": "Unknown student ID",
+   "query": "What is my fee status?",
+   "student_id": "ZZZ99999",
+   "expected_tools": [
+    "check_fee_status"
+   ],
+   "actual_tools": [
+    "check_fee_status"
+   ],
+   "tool_ok": true,
+   "assertions_ok": true,
+   "checks": [
+    {
+     "check": "contains any of [\"couldn't find\", 'could not find', \"wasn't able to locate\", 'unable to locate', 'no fee record']",
+     "ok": true
+    },
+    {
+     "check": "does not contain '\u20b9'",
+     "ok": true
+    },
+    {
+     "check": "status is success",
+     "ok": true
+    }
+   ],
+   "passed": true,
+   "latency_ms": 5.12,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable",
+   "evidence": "(none)",
+   "status": "success",
+   "response": "I couldn't find that record. No fee record found for student ID ZZZ99999. Please check the student ID.",
+   "execution_id": "exec-20261031-121720-623c67"
+  },
+  {
+   "id": "TC18",
+   "category": "Scholarship eligibility policy",
+   "query": "What is the eligibility for the Merit Excellence Award?",
+   "student_id": "MIM25010",
+   "expected_tools": [
+    "search_policy"
+   ],
+   "actual_tools": [
+    "search_policy"
+   ],
+   "tool_ok": true,
+   "assertions_ok": true,
+   "checks": [
+    {
+     "check": "contains any of ['3.5']",
+     "ok": true
+    },
+    {
+     "check": "status is success",
+     "ok": true
+    },
+    {
+     "check": "retrieved chunk 'hb-4*'",
+     "ok": true
+    }
+   ],
+   "passed": true,
+   "latency_ms": 23.29,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable",
+   "evidence": "hb-6-0, hb-4-0",
+   "status": "success",
+   "response": "According to the student handbook:\n\u2022 Clause 6.4 Scholarship holders must maintain at least 85 percent attendance for the Merit Excellence Award and at least 75 percent for other scholarships.\n\u2022 Clause 4.1 Merit Excellence Award: minimum CGPA of 3.5 and attendance of at least 85 percent in the previous semester.\n\n(Source: Section 6: Attendance Policy, Section 4: Scholarship Eligibility)",
+   "execution_id": "exec-20261031-121720-a6a852"
+  }
+ ]
+}

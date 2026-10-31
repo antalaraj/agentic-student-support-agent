@@ -1,0 +1,29 @@
+# Secrets & Environment variables
+.env
+*.env
+!.env.example
+.streamlit/secrets.toml
+
+# Local databases and generated indexes
+data/*.db
+data/*.sqlite*
+data/chroma/
+*.db
+*.sqlite
+*.sqlite3
+
+# Python Bytecode and test caches
+__pycache__/
+*.pyc
+*.pyo
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual Environments
+.venv/
+venv/
+env/
+
+# Model and cache files
+.cache/

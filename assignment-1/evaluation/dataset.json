@@ -1,0 +1,342 @@
+{
+ "_description": "Evaluation dataset. Automated assertions only decide pass/fail; LLM-judged quality is optional and reported separately.",
+ "cases": [
+  {
+   "id": "TC01",
+   "category": "Fee status",
+   "student_id": "MIM25002",
+   "query": "What is my current fee status?",
+   "expected_tools": [
+    "check_fee_status"
+   ],
+   "assertions": {
+    "contains_all": [
+     "{fee[outstanding_amount]:,}",
+     "{fee[payment_status]}"
+    ]
+   },
+   "state_checks": {},
+   "session": "eval-B"
+  },
+  {
+   "id": "TC02",
+   "category": "Fee status (outstanding)",
+   "student_id": "MIM25003",
+   "query": "How much outstanding fee do I have?",
+   "expected_tools": [
+    "check_fee_status"
+   ],
+   "assertions": {
+    "contains_all": [
+     "{fee[outstanding_amount]:,}"
+    ]
+   },
+   "state_checks": {},
+   "session": "eval-B"
+  },
+  {
+   "id": "TC03",
+   "category": "Scholarship status",
+   "student_id": "MIM25007",
+   "query": "What is my scholarship application status?",
+   "expected_tools": [
+    "check_scholarship_status"
+   ],
+   "assertions": {
+    "contains_all": [
+     "{sch[scholarship_name]}",
+     "{sch[application_status]}"
+    ]
+   },
+   "state_checks": {},
+   "session": "eval-B"
+  },
+  {
+   "id": "TC04",
+   "category": "Student profile",
+   "student_id": "MIM25005",
+   "query": "What programme am I studying?",
+   "expected_tools": [
+    "get_student_profile"
+   ],
+   "assertions": {
+    "contains_all": [
+     "{student[programme]}"
+    ]
+   },
+   "state_checks": {},
+   "session": "eval-B"
+  },
+  {
+   "id": "TC05",
+   "category": "Policy retrieval (late fee)",
+   "student_id": "MIM25001",
+   "query": "What is the late fee policy?",
+   "expected_tools": [
+    "search_policy"
+   ],
+   "assertions": {
+    "contains_any": [
+     "Rs. 200",
+     "200 per day"
+    ]
+   },
+   "state_checks": {
+    "retrieved_chunk_prefix": "hb-2"
+   },
+   "session": "eval-B"
+  },
+  {
+   "id": "TC06",
+   "category": "Course change",
+   "student_id": "MIM25006",
+   "query": "Can I change my programme?",
+   "expected_tools": [
+    "search_policy"
+   ],
+   "assertions": {
+    "contains_any": [
+     "only once",
+     "end of semester 1"
+    ]
+   },
+   "state_checks": {
+    "retrieved_chunk_prefix": "hb-5"
+   },
+   "session": "eval-B"
+  },
+  {
+   "id": "TC07",
+   "category": "Policy scenario (portal failure)",
+   "student_id": "MIM25002",
+   "query": "The payment portal failed. Can I pay on the next working day?",
+   "expected_tools": [
+    "search_policy"
+   ],
+   "assertions": {
+    "contains_any": [
+     "next working day"
+    ]
+   },
+   "state_checks": {
+    "retrieved_chunk_prefix": "hb-1"
+   },
+   "session": "eval-B"
+  },
+  {
+   "id": "TC08",
+   "category": "Support ticket creation",
+   "student_id": "MIM25009",
+   "query": "Create a support ticket for a payment issue",
+   "expected_tools": [
+    "create_support_ticket"
+   ],
+   "assertions": {
+    "contains_all": [
+     "TKT-"
+    ]
+   },
+   "state_checks": {
+    "ticket_created": true
+   },
+   "session": "eval-B"
+  },
+  {
+   "id": "TC09",
+   "category": "Persistent memory across sessions",
+   "student_id": "MIM25011",
+   "query": "What did I tell you about my academic preferences in our previous session?",
+   "expected_tools": [],
+   "assertions": {
+    "contains_any": [
+     "cloud data engineering",
+     "cloud data",
+     "data engineering"
+    ]
+   },
+   "state_checks": {
+    "memory_refs_min": 1
+   },
+   "setup_turns": [
+    {
+     "query": "Please call me Neil and I prefer cloud data engineering electives.",
+     "session": "eval-A"
+    }
+   ],
+   "session": "eval-B"
+  },
+  {
+   "id": "TC10",
+   "category": "General conversation",
+   "student_id": "MIM25004",
+   "query": "Hello, what can you help me with?",
+   "expected_tools": [],
+   "assertions": {
+    "contains_any": [
+     "fee",
+     "scholarship",
+     "help"
+    ]
+   },
+   "state_checks": {},
+   "session": "eval-B"
+  },
+  {
+   "id": "TC11",
+   "category": "Missing student information",
+   "student_id": null,
+   "query": "What is my current fee status?",
+   "expected_tools": [
+    "check_fee_status"
+   ],
+   "assertions": {
+    "contains_any": [
+     "select your student ID",
+     "student ID",
+     "student id"
+    ],
+    "not_contains": [
+     "₹"
+    ]
+   },
+   "state_checks": {},
+   "session": "eval-B"
+  },
+  {
+   "id": "TC12",
+   "category": "Unknown policy information",
+   "student_id": "MIM25001",
+   "query": "Does the handbook say anything about hostel accommodation rules?",
+   "expected_tools": [
+    "search_policy"
+   ],
+   "assertions": {
+    "contains_any": [
+     "couldn't find",
+     "Student Services"
+    ],
+    "not_contains": [
+     "Clause"
+    ]
+   },
+   "state_checks": {
+    "no_retrieved_chunks": true
+   },
+   "session": "eval-B"
+  },
+  {
+   "id": "TC13",
+   "category": "Tool failure (database outage)",
+   "student_id": "MIM25008",
+   "query": "What is my current fee status?",
+   "expected_tools": [
+    "check_fee_status"
+   ],
+   "assertions": {
+    "contains_any": [
+     "couldn't complete",
+     "Sorry"
+    ],
+    "not_contains": [
+     "₹"
+    ]
+   },
+   "state_checks": {},
+   "session": "eval-B",
+   "inject_failure": "tools.fee_tools.connection"
+  },
+  {
+   "id": "TC14",
+   "category": "Sensitive info not stored",
+   "student_id": "MIM25004",
+   "query": "Please call me Ananya. My OTP is 482913.",
+   "expected_tools": [],
+   "assertions": {},
+   "state_checks": {
+    "memory_contains": "Ananya",
+    "memory_absent": [
+     "482913",
+     "OTP"
+    ]
+   },
+   "session": "eval-B"
+  },
+  {
+   "id": "TC15",
+   "category": "Empty query",
+   "student_id": "MIM25001",
+   "query": "   ",
+   "expected_tools": [],
+   "assertions": {
+    "contains_any": [
+     "type a question"
+    ],
+    "status_in": [
+     "empty_query"
+    ]
+   },
+   "state_checks": {},
+   "session": "eval-B"
+  },
+  {
+   "id": "TC16",
+   "category": "Academic information",
+   "student_id": "MIM25012",
+   "query": "Which electives are offered in AI & Data Science?",
+   "expected_tools": [
+    "search_academic_information"
+   ],
+   "assertions": {
+    "contains_any": [
+     "Generative AI",
+     "Computer Vision"
+    ]
+   },
+   "state_checks": {
+    "retrieved_chunk_prefix": "hb-9"
+   },
+   "session": "eval-B"
+  },
+  {
+   "id": "TC17",
+   "category": "Unknown student ID",
+   "student_id": "ZZZ99999",
+   "query": "What is my fee status?",
+   "expected_tools": [
+    "check_fee_status"
+   ],
+   "assertions": {
+    "contains_any": [
+     "couldn't find",
+     "could not find",
+     "wasn't able to locate",
+     "unable to locate",
+     "no fee record"
+    ],
+    "not_contains": [
+     "₹"
+    ]
+   },
+   "state_checks": {},
+   "session": "eval-B"
+  },
+  {
+   "id": "TC18",
+   "category": "Scholarship eligibility policy",
+   "student_id": "MIM25010",
+   "query": "What is the eligibility for the Merit Excellence Award?",
+   "expected_tools": [
+    "search_policy"
+   ],
+   "assertions": {
+    "contains_any": [
+     "3.5"
+    ]
+   },
+   "state_checks": {
+    "retrieved_chunk_prefix": "hb-4"
+   },
+   "session": "eval-B"
+  }
+ ]
+}

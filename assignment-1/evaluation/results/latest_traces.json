@@ -1,0 +1,819 @@
+[
+ {
+  "execution_id": "exec-20261031-121719-1900af",
+  "timestamp": "2026-10-31T12:17:19+00:00",
+  "session_id": "eval-B",
+  "student_id": "MIM25002",
+  "user_query": "What is my current fee status?",
+  "intent": "fee",
+  "route_path": [
+   "validate_input",
+   "context_selection",
+   "agent",
+   "tools",
+   "agent",
+   "finalize"
+  ],
+  "context_sources": [
+   "current_message"
+  ],
+  "tool_calls": [
+   {
+    "tool": "check_fee_status",
+    "args": {
+     "student_id": "MIM25002"
+    },
+    "status": "ok",
+    "duration_ms": 2.33,
+    "note": null
+   }
+  ],
+  "retrieved_chunks": [],
+  "memory_refs": [],
+  "memory_writes": [],
+  "duration_ms": 32.3,
+  "llm_model": "offline-planner (no LLM)",
+  "llm_calls": 0,
+  "token_usage": {
+   "available": false,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable"
+  },
+  "final_status": "success",
+  "error": null,
+  "response_preview": "Your fee status is **Partially Paid**. Total fee \u20b9450,000, paid \u20b9300,000, outstanding \u20b9150,000. Next due date: 2026-11-30."
+ },
+ {
+  "execution_id": "exec-20261031-121719-10f2f4",
+  "timestamp": "2026-10-31T12:17:19+00:00",
+  "session_id": "eval-B",
+  "student_id": "MIM25003",
+  "user_query": "How much outstanding fee do I have?",
+  "intent": "fee",
+  "route_path": [
+   "validate_input",
+   "context_selection",
+   "agent",
+   "tools",
+   "agent",
+   "finalize"
+  ],
+  "context_sources": [
+   "current_message"
+  ],
+  "tool_calls": [
+   {
+    "tool": "check_fee_status",
+    "args": {
+     "student_id": "MIM25003"
+    },
+    "status": "ok",
+    "duration_ms": 1.16,
+    "note": null
+   }
+  ],
+  "retrieved_chunks": [],
+  "memory_refs": [],
+  "memory_writes": [],
+  "duration_ms": 5.47,
+  "llm_model": "offline-planner (no LLM)",
+  "llm_calls": 0,
+  "token_usage": {
+   "available": false,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable"
+  },
+  "final_status": "success",
+  "error": null,
+  "response_preview": "Your fee status is **Overdue**. Total fee \u20b9420,000, paid \u20b9100,000, outstanding \u20b9320,000. Next due date: 2026-09-15."
+ },
+ {
+  "execution_id": "exec-20261031-121719-011ea5",
+  "timestamp": "2026-10-31T12:17:19+00:00",
+  "session_id": "eval-B",
+  "student_id": "MIM25007",
+  "user_query": "What is my scholarship application status?",
+  "intent": "scholarship",
+  "route_path": [
+   "validate_input",
+   "context_selection",
+   "agent",
+   "tools",
+   "agent",
+   "finalize"
+  ],
+  "context_sources": [
+   "current_message"
+  ],
+  "tool_calls": [
+   {
+    "tool": "check_scholarship_status",
+    "args": {
+     "student_id": "MIM25007"
+    },
+    "status": "ok",
+    "duration_ms": 2.5,
+    "note": null
+   }
+  ],
+  "retrieved_chunks": [],
+  "memory_refs": [],
+  "memory_writes": [],
+  "duration_ms": 7.34,
+  "llm_model": "offline-planner (no LLM)",
+  "llm_calls": 0,
+  "token_usage": {
+   "available": false,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable"
+  },
+  "final_status": "success",
+  "error": null,
+  "response_preview": "Scholarship: **Merit Excellence Award** - application status **Rejected** (CGPA below the 3.5 cut-off)."
+ },
+ {
+  "execution_id": "exec-20261031-121719-ef05d9",
+  "timestamp": "2026-10-31T12:17:19+00:00",
+  "session_id": "eval-B",
+  "student_id": "MIM25005",
+  "user_query": "What programme am I studying?",
+  "intent": "profile",
+  "route_path": [
+   "validate_input",
+   "context_selection",
+   "agent",
+   "tools",
+   "agent",
+   "finalize"
+  ],
+  "context_sources": [
+   "current_message"
+  ],
+  "tool_calls": [
+   {
+    "tool": "get_student_profile",
+    "args": {
+     "student_id": "MIM25005"
+    },
+    "status": "ok",
+    "duration_ms": 2.58,
+    "note": null
+   }
+  ],
+  "retrieved_chunks": [],
+  "memory_refs": [],
+  "memory_writes": [],
+  "duration_ms": 8.15,
+  "llm_model": "offline-planner (no LLM)",
+  "llm_calls": 0,
+  "token_usage": {
+   "available": false,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable"
+  },
+  "final_status": "success",
+  "error": null,
+  "response_preview": "You are Kabir Singh (MIM25005), studying **PGDM (Human Resources)**, semester 4. CGPA 3.12, attendance 82.0%, faculty advisor Dr. L. Thomas."
+ },
+ {
+  "execution_id": "exec-20261031-121719-667392",
+  "timestamp": "2026-10-31T12:17:19+00:00",
+  "session_id": "eval-B",
+  "student_id": "MIM25001",
+  "user_query": "What is the late fee policy?",
+  "intent": "policy",
+  "route_path": [
+   "validate_input",
+   "context_selection",
+   "agent",
+   "tools",
+   "agent",
+   "finalize"
+  ],
+  "context_sources": [
+   "current_message"
+  ],
+  "tool_calls": [
+   {
+    "tool": "search_policy",
+    "args": {
+     "query": "What is the late fee policy?"
+    },
+    "status": "ok",
+    "duration_ms": 65.6,
+    "note": null
+   }
+  ],
+  "retrieved_chunks": [
+   {
+    "chunk_id": "hb-2-0",
+    "section": "Section 2: Late Fee Policy",
+    "relevance": 0.5164
+   },
+   {
+    "chunk_id": "hb-2-1",
+    "section": "Section 2: Late Fee Policy",
+    "relevance": 0.4536
+   },
+   {
+    "chunk_id": "hb-1-1",
+    "section": "Section 1: Fee Payment Rules",
+    "relevance": 0.2807
+   }
+  ],
+  "memory_refs": [],
+  "memory_writes": [],
+  "duration_ms": 73.85,
+  "llm_model": "offline-planner (no LLM)",
+  "llm_calls": 0,
+  "token_usage": {
+   "available": false,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable"
+  },
+  "final_status": "success",
+  "error": null,
+  "response_preview": "According to the student handbook:\n\u2022 Clause 2.1 A grace period of 7 calendar days applies after the due date. No late fee is charged during the grace period.\n\u2022 Clause 2.2 After the grace period a late fee of Rs. 200 per day is charged on the overdue instalment. The total late fee is capped at 10 percent of the overdue amount.\n\n(Source: Section 2: Late Fee Policy)"
+ },
+ {
+  "execution_id": "exec-20261031-121719-4fd10b",
+  "timestamp": "2026-10-31T12:17:19+00:00",
+  "session_id": "eval-B",
+  "student_id": "MIM25006",
+  "user_query": "Can I change my programme?",
+  "intent": "policy",
+  "route_path": [
+   "validate_input",
+   "context_selection",
+   "agent",
+   "tools",
+   "agent",
+   "finalize"
+  ],
+  "context_sources": [
+   "current_message"
+  ],
+  "tool_calls": [
+   {
+    "tool": "search_policy",
+    "args": {
+     "query": "Can I change my programme?"
+    },
+    "status": "ok",
+    "duration_ms": 33.26,
+    "note": null
+   }
+  ],
+  "retrieved_chunks": [
+   {
+    "chunk_id": "hb-5-1",
+    "section": "Section 5: Course and Programme Change Rules",
+    "relevance": 0.6222
+   },
+   {
+    "chunk_id": "hb-5-0",
+    "section": "Section 5: Course and Programme Change Rules",
+    "relevance": 0.5167
+   }
+  ],
+  "memory_refs": [],
+  "memory_writes": [],
+  "duration_ms": 42.94,
+  "llm_model": "offline-planner (no LLM)",
+  "llm_calls": 0,
+  "token_usage": {
+   "available": false,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable"
+  },
+  "final_status": "success",
+  "error": null,
+  "response_preview": "According to the student handbook:\n\u2022 Clause 5.5 No programme change is permitted in semesters 2, 3 or 4. Any fee difference between programmes must be paid before the change takes effect.\n\u2022 Clause 5.3 Programme (specialisation) change: allowed only once, and only at the end of semester 1. The request must be submitted within 1 week of the semester 1 results.\n\n(Source: Section 5: Course and Programme Change Rules)"
+ },
+ {
+  "execution_id": "exec-20261031-121719-b687bf",
+  "timestamp": "2026-10-31T12:17:19+00:00",
+  "session_id": "eval-B",
+  "student_id": "MIM25002",
+  "user_query": "The payment portal failed. Can I pay on the next working day?",
+  "intent": "policy",
+  "route_path": [
+   "validate_input",
+   "context_selection",
+   "agent",
+   "tools",
+   "agent",
+   "finalize"
+  ],
+  "context_sources": [
+   "current_message"
+  ],
+  "tool_calls": [
+   {
+    "tool": "search_policy",
+    "args": {
+     "query": "The payment portal failed. Can I pay on the next working day?"
+    },
+    "status": "ok",
+    "duration_ms": 28.25,
+    "note": null
+   }
+  ],
+  "retrieved_chunks": [
+   {
+    "chunk_id": "hb-1-1",
+    "section": "Section 1: Fee Payment Rules",
+    "relevance": 0.5675
+   },
+   {
+    "chunk_id": "hb-1-0",
+    "section": "Section 1: Fee Payment Rules",
+    "relevance": 0.3711
+   },
+   {
+    "chunk_id": "hb-3-1",
+    "section": "Section 3: Scholarship Application Procedure",
+    "relevance": 0.2057
+   }
+  ],
+  "memory_refs": [],
+  "memory_writes": [],
+  "duration_ms": 35.93,
+  "llm_model": "offline-planner (no LLM)",
+  "llm_calls": 0,
+  "token_usage": {
+   "available": false,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable"
+  },
+  "final_status": "success",
+  "error": null,
+  "response_preview": "According to the student handbook:\n\u2022 Clause 1.5 Payment portal failure: if an online payment fails, the student must not retry repeatedly. The student should note the transaction reference, keep a screenshot, and raise a support ticket in the category fee_payment within 24 hours. If the Accounts Office verifies that the failure was caused by the portal, the payment may be made on the next working day and no late fee will be charged for that delay.\n\u2022 Clause 1.6 If money is debited but the portal "
+ },
+ {
+  "execution_id": "exec-20261031-121720-ea4eba",
+  "timestamp": "2026-10-31T12:17:20+00:00",
+  "session_id": "eval-B",
+  "student_id": "MIM25009",
+  "user_query": "Create a support ticket for a payment issue",
+  "intent": "support_ticket",
+  "route_path": [
+   "validate_input",
+   "context_selection",
+   "agent",
+   "tools",
+   "agent",
+   "finalize"
+  ],
+  "context_sources": [
+   "current_message"
+  ],
+  "tool_calls": [
+   {
+    "tool": "create_support_ticket",
+    "args": {
+     "student_id": "MIM25009",
+     "issue": "Create a support ticket for a payment issue",
+     "category": "fee_payment"
+    },
+    "status": "ok",
+    "duration_ms": 11.08,
+    "note": null
+   }
+  ],
+  "retrieved_chunks": [],
+  "memory_refs": [],
+  "memory_writes": [],
+  "duration_ms": 21.7,
+  "llm_model": "offline-planner (no LLM)",
+  "llm_calls": 0,
+  "token_usage": {
+   "available": false,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable"
+  },
+  "final_status": "success",
+  "error": null,
+  "response_preview": "I've created your support ticket **TKT-20261031-EDC35A** (category: fee_payment). Expected response: within 2 working days (1 working day for urgent fee/exam matters)."
+ },
+ {
+  "execution_id": "exec-20261031-121720-64c388",
+  "timestamp": "2026-10-31T12:17:20+00:00",
+  "session_id": "eval-B",
+  "student_id": "MIM25011",
+  "user_query": "What did I tell you about my academic preferences in our previous session?",
+  "intent": "memory_recall",
+  "route_path": [
+   "validate_input",
+   "context_selection",
+   "agent",
+   "finalize"
+  ],
+  "context_sources": [
+   "current_message",
+   "memory(2 items)"
+  ],
+  "tool_calls": [],
+  "retrieved_chunks": [],
+  "memory_refs": [
+   {
+    "id": 2,
+    "content": "Preference: cloud data engineering electives"
+   },
+   {
+    "id": 1,
+    "content": "Preferred name: Neil"
+   }
+  ],
+  "memory_writes": [],
+  "duration_ms": 18.41,
+  "llm_model": "offline-planner (no LLM)",
+  "llm_calls": 0,
+  "token_usage": {
+   "available": false,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable"
+  },
+  "final_status": "success",
+  "error": null,
+  "response_preview": "Here is what I remember from our earlier conversations:\n\u2022 Preference: cloud data engineering electives\n\u2022 Preferred name: Neil"
+ },
+ {
+  "execution_id": "exec-20261031-121720-7e0350",
+  "timestamp": "2026-10-31T12:17:20+00:00",
+  "session_id": "eval-B",
+  "student_id": "MIM25004",
+  "user_query": "Hello, what can you help me with?",
+  "intent": "general",
+  "route_path": [
+   "validate_input",
+   "context_selection",
+   "agent",
+   "finalize"
+  ],
+  "context_sources": [
+   "current_message"
+  ],
+  "tool_calls": [],
+  "retrieved_chunks": [],
+  "memory_refs": [],
+  "memory_writes": [],
+  "duration_ms": 6.82,
+  "llm_model": "offline-planner (no LLM)",
+  "llm_calls": 0,
+  "token_usage": {
+   "available": false,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable"
+  },
+  "final_status": "success",
+  "error": null,
+  "response_preview": "I can check your fee and scholarship status, show your profile, search the student handbook (fees, late fees, attendance, course changes, exams) and raise support tickets."
+ },
+ {
+  "execution_id": "exec-20261031-121720-a65156",
+  "timestamp": "2026-10-31T12:17:20+00:00",
+  "session_id": "eval-B",
+  "student_id": null,
+  "user_query": "What is my current fee status?",
+  "intent": "fee",
+  "route_path": [
+   "validate_input",
+   "context_selection",
+   "agent",
+   "tools",
+   "agent",
+   "finalize"
+  ],
+  "context_sources": [
+   "current_message"
+  ],
+  "tool_calls": [
+   {
+    "tool": "check_fee_status",
+    "args": {
+     "student_id": ""
+    },
+    "status": "needs_input",
+    "duration_ms": 0.04,
+    "note": null
+   }
+  ],
+  "retrieved_chunks": [],
+  "memory_refs": [],
+  "memory_writes": [],
+  "duration_ms": 5.55,
+  "llm_model": "offline-planner (no LLM)",
+  "llm_calls": 0,
+  "token_usage": {
+   "available": false,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable"
+  },
+  "final_status": "success",
+  "error": null,
+  "response_preview": "I need to know who you are first. Please select your student ID in the sidebar."
+ },
+ {
+  "execution_id": "exec-20261031-121720-417e9e",
+  "timestamp": "2026-10-31T12:17:20+00:00",
+  "session_id": "eval-B",
+  "student_id": "MIM25001",
+  "user_query": "Does the handbook say anything about hostel accommodation rules?",
+  "intent": "policy",
+  "route_path": [
+   "validate_input",
+   "context_selection",
+   "agent",
+   "tools",
+   "agent",
+   "finalize"
+  ],
+  "context_sources": [
+   "current_message"
+  ],
+  "tool_calls": [
+   {
+    "tool": "search_policy",
+    "args": {
+     "query": "Does the handbook say anything about hostel accommodation rules?"
+    },
+    "status": "no_evidence",
+    "duration_ms": 32.45,
+    "note": null
+   }
+  ],
+  "retrieved_chunks": [],
+  "memory_refs": [],
+  "memory_writes": [],
+  "duration_ms": 40.11,
+  "llm_model": "offline-planner (no LLM)",
+  "llm_calls": 0,
+  "token_usage": {
+   "available": false,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable"
+  },
+  "final_status": "success",
+  "error": null,
+  "response_preview": "I couldn't find this in the student handbook, so I can't give a reliable answer. Please contact the Student Services Office (student.services@meridian-demo.example)."
+ },
+ {
+  "execution_id": "exec-20261031-121720-d3caa6",
+  "timestamp": "2026-10-31T12:17:20+00:00",
+  "session_id": "eval-B",
+  "student_id": "MIM25008",
+  "user_query": "What is my current fee status?",
+  "intent": "fee",
+  "route_path": [
+   "validate_input",
+   "context_selection",
+   "agent",
+   "tools",
+   "agent",
+   "finalize"
+  ],
+  "context_sources": [
+   "current_message"
+  ],
+  "tool_calls": [
+   {
+    "tool": "check_fee_status",
+    "args": {
+     "student_id": "MIM25008"
+    },
+    "status": "error",
+    "duration_ms": 0.62,
+    "note": null
+   }
+  ],
+  "retrieved_chunks": [],
+  "memory_refs": [],
+  "memory_writes": [],
+  "duration_ms": 5.3,
+  "llm_model": "offline-planner (no LLM)",
+  "llm_calls": 0,
+  "token_usage": {
+   "available": false,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable"
+  },
+  "final_status": "success",
+  "error": null,
+  "response_preview": "Sorry, I couldn't complete that: The student database is temporarily unavailable. Please try again, or contact Student Services Office (student.services@meridian-demo.example)."
+ },
+ {
+  "execution_id": "exec-20261031-121720-0081de",
+  "timestamp": "2026-10-31T12:17:20+00:00",
+  "session_id": "eval-B",
+  "student_id": "MIM25004",
+  "user_query": "Please call me Ananya. My OTP is [REDACTED]",
+  "intent": "general",
+  "route_path": [
+   "validate_input",
+   "context_selection",
+   "agent",
+   "finalize"
+  ],
+  "context_sources": [
+   "current_message"
+  ],
+  "tool_calls": [],
+  "retrieved_chunks": [],
+  "memory_refs": [],
+  "memory_writes": [
+   {
+    "id": 3,
+    "content": "Preferred name: Ananya",
+    "action": "created"
+   }
+  ],
+  "duration_ms": 11.51,
+  "llm_model": "offline-planner (no LLM)",
+  "llm_calls": 0,
+  "token_usage": {
+   "available": false,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable"
+  },
+  "final_status": "success",
+  "error": null,
+  "response_preview": "Please don't share passwords, OTPs or card details with me. I won't store them, and staff will never ask for them in chat."
+ },
+ {
+  "execution_id": "exec-20261031-121720-1a20d8",
+  "timestamp": "2026-10-31T12:17:20+00:00",
+  "session_id": "eval-B",
+  "student_id": "MIM25001",
+  "user_query": "   ",
+  "intent": null,
+  "route_path": [
+   "validate_input"
+  ],
+  "context_sources": [],
+  "tool_calls": [],
+  "retrieved_chunks": [],
+  "memory_refs": [],
+  "memory_writes": [],
+  "duration_ms": 1.77,
+  "llm_model": "offline-planner (no LLM)",
+  "llm_calls": 0,
+  "token_usage": {
+   "available": false,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable"
+  },
+  "final_status": "empty_query",
+  "error": null,
+  "response_preview": "Please type a question - for example, \u201cWhat is my current fee status?\u201d"
+ },
+ {
+  "execution_id": "exec-20261031-121720-70c313",
+  "timestamp": "2026-10-31T12:17:20+00:00",
+  "session_id": "eval-B",
+  "student_id": "MIM25012",
+  "user_query": "Which electives are offered in AI & Data Science?",
+  "intent": "academic",
+  "route_path": [
+   "validate_input",
+   "context_selection",
+   "agent",
+   "tools",
+   "agent",
+   "finalize"
+  ],
+  "context_sources": [
+   "current_message"
+  ],
+  "tool_calls": [
+   {
+    "tool": "search_academic_information",
+    "args": {
+     "query": "Which electives are offered in AI & Data Science?"
+    },
+    "status": "ok",
+    "duration_ms": 24.71,
+    "note": null
+   }
+  ],
+  "retrieved_chunks": [
+   {
+    "chunk_id": "hb-9-0",
+    "section": "Section 9: Academic Programmes and Courses",
+    "relevance": 0.4711
+   }
+  ],
+  "memory_refs": [],
+  "memory_writes": [],
+  "duration_ms": 32.07,
+  "llm_model": "offline-planner (no LLM)",
+  "llm_calls": 0,
+  "token_usage": {
+   "available": false,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable"
+  },
+  "final_status": "success",
+  "error": null,
+  "response_preview": "According to the student handbook:\n\u2022 Clause 9.3 PGDM (Artificial Intelligence & Data Science) core courses: Statistics for Analytics, Python for Data Science, Machine Learning, Deep Learning, Agentic AI Engineering, MLOps. Electives: Generative AI Applications, Computer Vision, Responsible AI.\n\u2022 Clause 9.2 PGDM (Big Data Analytics) core courses: Statistics for Analytics, Python for Data Science, Databases and Big Data Platforms (Hadoop and Spark), Machine Learning, Data Visualisation. Electives:"
+ },
+ {
+  "execution_id": "exec-20261031-121720-623c67",
+  "timestamp": "2026-10-31T12:17:20+00:00",
+  "session_id": "eval-B",
+  "student_id": "ZZZ99999",
+  "user_query": "What is my fee status?",
+  "intent": "fee",
+  "route_path": [
+   "validate_input",
+   "context_selection",
+   "agent",
+   "tools",
+   "agent",
+   "finalize"
+  ],
+  "context_sources": [
+   "current_message"
+  ],
+  "tool_calls": [
+   {
+    "tool": "check_fee_status",
+    "args": {
+     "student_id": "ZZZ99999"
+    },
+    "status": "not_found",
+    "duration_ms": 1.11,
+    "note": null
+   }
+  ],
+  "retrieved_chunks": [],
+  "memory_refs": [],
+  "memory_writes": [],
+  "duration_ms": 5.12,
+  "llm_model": "offline-planner (no LLM)",
+  "llm_calls": 0,
+  "token_usage": {
+   "available": false,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable"
+  },
+  "final_status": "success",
+  "error": null,
+  "response_preview": "I couldn't find that record. No fee record found for student ID ZZZ99999. Please check the student ID."
+ },
+ {
+  "execution_id": "exec-20261031-121720-a6a852",
+  "timestamp": "2026-10-31T12:17:20+00:00",
+  "session_id": "eval-B",
+  "student_id": "MIM25010",
+  "user_query": "What is the eligibility for the Merit Excellence Award?",
+  "intent": "policy",
+  "route_path": [
+   "validate_input",
+   "context_selection",
+   "agent",
+   "tools",
+   "agent",
+   "finalize"
+  ],
+  "context_sources": [
+   "current_message"
+  ],
+  "tool_calls": [
+   {
+    "tool": "search_policy",
+    "args": {
+     "query": "What is the eligibility for the Merit Excellence Award?"
+    },
+    "status": "ok",
+    "duration_ms": 18.8,
+    "note": null
+   }
+  ],
+  "retrieved_chunks": [
+   {
+    "chunk_id": "hb-6-0",
+    "section": "Section 6: Attendance Policy",
+    "relevance": 0.2641
+   },
+   {
+    "chunk_id": "hb-4-0",
+    "section": "Section 4: Scholarship Eligibility",
+    "relevance": 0.2158
+   }
+  ],
+  "memory_refs": [],
+  "memory_writes": [],
+  "duration_ms": 23.29,
+  "llm_model": "offline-planner (no LLM)",
+  "llm_calls": 0,
+  "token_usage": {
+   "available": false,
+   "input_tokens": "unavailable",
+   "output_tokens": "unavailable"
+  },
+  "final_status": "success",
+  "error": null,
+  "response_preview": "According to the student handbook:\n\u2022 Clause 6.4 Scholarship holders must maintain at least 85 percent attendance for the Merit Excellence Award and at least 75 percent for other scholarships.\n\u2022 Clause 4.1 Merit Excellence Award: minimum CGPA of 3.5 and attendance of at least 85 percent in the previous semester.\n\n(Source: Section 6: Attendance Policy, Section 4: Scholarship Eligibility)"
+ }
+]
