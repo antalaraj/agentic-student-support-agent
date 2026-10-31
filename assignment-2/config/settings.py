@@ -3,11 +3,15 @@ import os
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
+WORKSPACE_ROOT = ROOT.parent
 
 try:
     from dotenv import load_dotenv
 
-    load_dotenv(ROOT / ".env", override=True)
+    # Search assignment-2/.env first, then workspace root .env, then assignment-1/.env
+    for candidate in [ROOT / ".env", WORKSPACE_ROOT / ".env", WORKSPACE_ROOT / "assignment-1" / ".env"]:
+        if candidate.exists():
+            load_dotenv(candidate, override=False)
 except ImportError:
     pass
 
