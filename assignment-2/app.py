@@ -788,17 +788,35 @@ def page_admin_approval_history():
     st.subheader("📜 Approval Decision History")
     with connection() as conn:
         rows = conn.execute("""
-            SELECT request_id, student_id, action_type, status, reason, 
-                   reviewed_by, reviewed_at, admin_notes, created_at
+            SELECT request_id, student_id, action_type, status, payload_json,
+                   reviewed_by, reviewed_at, decision_reason, requested_at
             FROM approval_requests
-            ORDER BY created_at DESC
+            ORDER BY requested_at DESC
         """).fetchall()
 
     if not rows:
         st.info("No approval requests found.")
         return
 
-    data = [dict(r) for r in rows]
+    data = []
+    for r in rows:
+        payload = {}
+        try:
+            payload = json.loads(r["payload_json"]) if r["payload_json"] else {}
+        except Exception:
+            pass
+        data.append({
+            "Request ID": r["request_id"],
+            "Student ID": r["student_id"],
+            "Action": r["action_type"],
+            "Status": r["status"],
+            "Reason": payload.get("reason", "-"),
+            "Requested Due Date": payload.get("requested_due_date", "-"),
+            "Submitted At": r["requested_at"],
+            "Reviewed By": r["reviewed_by"] or "-",
+            "Reviewed At": r["reviewed_at"] or "-",
+            "Admin Remarks": r["decision_reason"] or "-",
+        })
     df = pd.DataFrame(data)
     st.dataframe(df, use_container_width=True, hide_index=True)
 
@@ -823,7 +841,7 @@ def page_admin_audit_logs():
     m1.metric("Total Events Displayed", len(logs))
     m2.metric("Allowed Actions", sum(1 for l in logs if l.get("authorization_decision") == "ALLOWED"))
     m3.metric("Denied Actions", sum(1 for l in logs if l.get("authorization_decision") == "DENIED"))
-    m4.metric("Approval Events", sum(1 for l in logs if l.get("approval_status") is not None))
+    m4.metric("Approval Events", sum(1 for l in logs if l.get("approval_status") not in (None, "N/A")))
 
     if not logs:
         st.info("No audit logs matched the specified filters.")
@@ -832,14 +850,15 @@ def page_admin_audit_logs():
     display_data = []
     for l in logs:
         display_data.append({
-            "Audit ID": l["audit_id"][:12] + "…",
-            "Timestamp": l["timestamp"],
-            "Requester": f"{l['requester_id']} ({l['requester_role']})",
-            "Action": l["action_type"],
-            "Target": l["requested_resource_id"] or "-",
-            "Decision": l["authorization_decision"],
-            "Approval": l["approval_status"] or "-",
-            "Execution": l["execution_status"],
+            "Audit ID": l.get("audit_id", "")[:12] + "…",
+            "Timestamp": l.get("timestamp", ""),
+            "Requester": f"{l.get('requester_id', 'N/A')} ({l.get('requester_role', 'N/A')})",
+            "Action": l.get("action") or l.get("action_type") or "-",
+            "Resource": l.get("resource") or "-",
+            "Target": l.get("requested_resource_id") or "-",
+            "Decision": l.get("authorization_decision") or "-",
+            "Approval": l.get("approval_status") or "-",
+            "Execution": l.get("execution_status") or "-",
         })
 
     st.dataframe(pd.DataFrame(display_data), use_container_width=True, hide_index=True)
