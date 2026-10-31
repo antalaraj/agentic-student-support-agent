@@ -4,8 +4,9 @@
 [![LangGraph](https://img.shields.io/badge/orchestration-LangGraph%201.0+-blueviolet.svg)](https://github.com/langchain-ai/langgraph)
 [![Groq](https://img.shields.io/badge/LLM%20Inference-Groq%20Cloud-orange.svg)](https://groq.com/)
 [![Streamlit](https://img.shields.io/badge/UI-Streamlit%201.50+-FF4B4B.svg)](https://streamlit.io/)
-[![Tests](https://img.shields.io/badge/tests-101%2F101%20passing-brightgreen.svg)](docs/assignment-1/TESTING_REPORT.md)
-[![Evaluation](https://img.shields.io/badge/benchmark-100%25%20accuracy%20(18%2F18)-success.svg)](docs/assignment-1/EVALUATION_REPORT.md)
+[![Assignment 1 Tests](https://img.shields.io/badge/assignment--1%20tests-101%2F101%20passing-brightgreen.svg)](docs/assignment-1/TESTING_REPORT.md)
+[![Assignment 2 Tests](https://img.shields.io/badge/assignment--2%20tests-46%2F46%20passing-brightgreen.svg)](assignment-2/reports/TESTING_REPORT.md)
+[![Assignment 2 Benchmark](https://img.shields.io/badge/assignment--2%20benchmark-100%25%20(24%2F24)-success.svg)](assignment-2/reports/EVALUATION_REPORT.md)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 
 **Agentic AI Engineering · PGDM (BDA / AI & DS), Batch 2025–27**  
@@ -18,9 +19,9 @@
 
 The **Intelligent Agentic Student Support System** is an enterprise-grade AI system engineered to resolve realistic university student inquiries across academic regulations, financial fees, scholarship applications, and technical support ticketing.
 
-The repository is structured to house both academic phases:
+The repository houses both completed, verified academic phases:
 * **Assignment 1 (`assignment-1/`)**: **Fully Complete & Verified**. A production-ready, stateful single-agent architecture featuring LangGraph `StateGraph` cyclic orchestration, dynamic tool-calling across 6 custom domain tools, persistent SQLite long-term memory with heuristic privacy redaction, ChromaDB policy RAG, rate-limit resilient Groq LLM integration, and a comprehensive Streamlit dashboard.
-* **Assignment 2 (`assignment-2/`)**: **Scaffolded for Development**. A forward-looking Multi-Agent Collaborative System designed with hierarchical supervisor-worker routing, human-in-the-loop approval workflows, and multi-document hybrid retrieval (active development on `feature/assignment-2`).
+* **Assignment 2 (`assignment-2/`)**: **Fully Complete & Verified**. A Safe and Production-Aware Student Support Application extending Assignment 1 with cryptographically secure authentication (bcrypt 12 rounds), deterministic backend tenant ownership isolation, human-in-the-loop sensitive action approvals (fee payment extensions), permanent immutable security audit logging, and automated credential memory sanitization (active development on `feature/assignment-2`).
 
 > ⚠️ *All student profiles, fees, scholarships, and handbook regulations in this repository are fictional demonstration assets for Meridian Institute of Management. No actual student PII is contained.*
 
@@ -53,18 +54,25 @@ agentic-student-support-agent/
 │   ├── data/                          # Fictional student handbook, sample students JSON
 │   └── tests/                         # 101 passing unit, integration, memory, and scenario tests
 │
-├── assignment-2/                      # PREPARED ASSIGNMENT 2 SCAFFOLDING
-│   ├── README.md                      # Assignment 2 scope, milestones, and development guide
-│   ├── .gitignore                     # Assignment 2 ignore rules
+├── assignment-2/                      # COMPLETED ASSIGNMENT 2 IMPLEMENTATION
+│   ├── README.md                      # Assignment 2 comprehensive manual & credentials
+│   ├── requirements.txt               # Assignment 2 dependencies (includes bcrypt)
 │   ├── .env.example                   # Environment variables template
-│   ├── requirements.txt               # Multi-agent dependency specifications
-│   ├── agents/                        # Supervisor orchestrator & specialist subagents (.gitkeep)
-│   ├── tools/                         # Domain-specific multi-agent toolkits (.gitkeep)
-│   ├── memory/                        # Multi-tenant and shared blackboard stores (.gitkeep)
-│   ├── config/                        # Multi-agent policies and settings (.gitkeep)
-│   ├── data/                          # Multi-document corpora (.gitkeep)
-│   ├── evaluation/                    # Multi-agent collaboration benchmark (.gitkeep)
-│   └── tests/                         # Multi-agent collaboration test suite (.gitkeep)
+│   ├── pytest.ini                     # Pytest configuration
+│   ├── app.py                         # Dual-role Streamlit application (Student & Admin)
+│   ├── auth/                          # Cryptographic identity, bcrypt hashing, sessions
+│   ├── authorization/                 # Student ownership policies & access control gates
+│   ├── approval/                      # Human-in-the-loop sensitive action workflow engine
+│   ├── audit/                         # Permanent immutable security audit logging service
+│   ├── privacy/                       # Credential detection & sanitization (OTP, passwords, keys)
+│   ├── agent/                         # Authenticated LangGraph orchestration & planner
+│   ├── tools/                         # 7 structured domain tools (ownership enforced)
+│   ├── database/                      # Extended SQLite schema, memory store, seed scripts
+│   ├── rag/                           # ChromaDB handbook policy retrieval
+│   ├── tracing/                       # Execution traces & latency metrics
+│   ├── tests/                         # 46 automated security & regression tests (100% pass)
+│   ├── evaluation/                    # 24-case benchmark dataset & automated evaluator (100% pass)
+│   └── reports/                       # Formal audit, security, testing, and evaluation reports
 │
 └── docs/                              # CENTRALIZED DOCUMENTATION HUB
     ├── README.md                      # Documentation index
@@ -76,8 +84,8 @@ agentic-student-support-agent/
     │   ├── TESTING_REPORT.md
     │   ├── EVALUATION_REPORT.md
     │   └── viva_demo_guide.md         # Evaluator walkthrough & live viva demonstration script
-    └── assignment-2/                  # Assignment 2 preview & roadmap
-        └── ASSIGNMENT_2_ROADMAP.md    # Multi-agent collaboration architecture roadmap
+    └── assignment-2/                  # Assignment 2 roadmap & specification
+        └── ASSIGNMENT_2_ROADMAP.md    # Architecture roadmap
 ```
 
 ---
@@ -267,13 +275,23 @@ This repository adheres to a structured branch and release lifecycle:
 
 ## 📋 Documentation & Deliverables Index
 
+### Assignment 1 Documentation
 * 📄 **[Assignment 1 Audit Report](docs/assignment-1/ASSIGNMENT_1_AUDIT_REPORT.md)** — Exhaustive compliance verification across all 11 assignment specification areas.
 * 📄 **[Testing Report](docs/assignment-1/TESTING_REPORT.md)** — Detailed pytest test log (101 tests), UI subagent audit, and root cause analysis of fixed bugs.
 * 📄 **[Evaluation Report](docs/assignment-1/EVALUATION_REPORT.md)** — In-depth breakdown of the 18-case benchmark with latency, token usage, and retrieval evidence.
 * 📄 **[Viva Voce & Live Demo Guide](docs/assignment-1/viva_demo_guide.md)** — Complete step-by-step evaluator script and anticipated technical defense Q&A.
+
+### Assignment 2 Documentation & Reports
+* 📄 **[Assignment 2 Audit Report](assignment-2/reports/ASSIGNMENT_2_AUDIT_REPORT.md)** — Requirement-by-requirement verification checklist with 100% PASS status.
+* 📄 **[Security & Privacy Report](assignment-2/reports/SECURITY_PRIVACY_REPORT.md)** — Threat modeling, STRIDE analysis, and OWASP Top 10 for LLM applications.
+* 📄 **[Testing Report](assignment-2/reports/TESTING_REPORT.md)** — Automated test log covering 46 security, privacy, and regression tests.
+* 📄 **[Evaluation Report](assignment-2/reports/EVALUATION_REPORT.md)** — 24-case benchmark breakdown (100.0% task accuracy, 100.0% privacy isolation).
+* 📄 **[Assignment 1 vs. Assignment 2 Comparison](assignment-2/reports/ASSIGNMENT_1_VS_ASSIGNMENT_2.md)** — Comprehensive metrics and architectural diff.
+
+### System Architecture & Reference
 * 📄 **[System Architecture](docs/architecture/system_architecture.md)** — Full subsystem specification (StateGraph, Context Selection, Memory, Tools, RAG, Tracing).
-* 📄 **[Architectural Diagrams](docs/architecture/diagrams.md)** — Visual Mermaid diagrams of all workflows and relational schemas.
-* 📄 **[Assignment 2 Roadmap](docs/assignment-2/ASSIGNMENT_2_ROADMAP.md)** — Technical roadmap and multi-agent architecture plan for Assignment 2.
+* 📄 **[Architectural Diagrams](docs/architecture/diagrams.md)** — Visual Mermaid diagrams of all workflows, security barriers, and relational schemas.
+* 📄 **[Assignment 2 Roadmap](docs/assignment-2/ASSIGNMENT_2_ROADMAP.md)** — Original roadmap and architectural guidance for Assignment 2.
 
 ---
 

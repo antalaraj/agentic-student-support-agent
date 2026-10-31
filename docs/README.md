@@ -17,8 +17,14 @@ docs/
 │   ├── TESTING_REPORT.md              # 101-test automated suite results & bug fix log
 │   ├── EVALUATION_REPORT.md           # 18-case benchmark evaluation metrics & analysis
 │   └── viva_demo_guide.md             # Evaluator viva presentation & live demonstration script
-└── assignment-2/                      # Assignment 2 forward-looking documentation
-    └── ASSIGNMENT_2_ROADMAP.md        # Multi-agent architecture, supervisor-worker design & roadmap
+└── assignment-2/                      # Assignment 2 deliverables, reports & guides
+    ├── ASSIGNMENT_2_AUDIT_REPORT.md   # Official requirement-by-requirement audit & sign-off
+    ├── SECURITY_PRIVACY_REPORT.md     # In-depth security architecture & threat model analysis
+    ├── TESTING_REPORT.md              # 46-test automated security suite results (100% passing)
+    ├── EVALUATION_REPORT.md           # 24-case benchmark evaluation metrics & privacy analysis
+    ├── ASSIGNMENT_1_VS_ASSIGNMENT_2.md# Detailed architectural comparison matrix
+    ├── viva_demo_guide.md             # Evaluator viva presentation & live demonstration script
+    └── ASSIGNMENT_2_ROADMAP.md        # Forward-looking roadmap & technical specifications
 ```
 
 ---
@@ -35,5 +41,11 @@ docs/
 * **[Evaluation Report](assignment-1/EVALUATION_REPORT.md)**: Benchmark evaluation report covering 18 real-world cases with 100% task accuracy and 100% tool selection success.
 * **[Viva & Demo Guide](assignment-1/viva_demo_guide.md)**: Recommended walkthrough and anticipated technical Q&A for viva voce evaluators.
 
-### 3. Assignment 2 Roadmap
-* **[Assignment 2 Roadmap](assignment-2/ASSIGNMENT_2_ROADMAP.md)**: Strategic roadmap outlining the upcoming Multi-Agent Collaborative System, hierarchical supervisor-worker pattern, human-in-the-loop controls, and hybrid RAG.
+### 3. Assignment 2 Reports & Deliverables
+* **[Assignment 2 Audit Report](assignment-2/ASSIGNMENT_2_AUDIT_REPORT.md)**: Official requirement-by-requirement compliance verification and architectural audit.
+* **[Security & Threat Model Report](assignment-2/SECURITY_PRIVACY_REPORT.md)**: Deep dive into bcrypt 12-round authentication, multi-tenant ownership enforcement, Human-in-the-Loop approvals, and immutable audit logging.
+* **[Testing Report](assignment-2/TESTING_REPORT.md)**: Complete report covering 46 automated unit, security, integration, and regression tests (100% passing).
+* **[Evaluation Report](assignment-2/EVALUATION_REPORT.md)**: Repeatable 24-case benchmark results covering task accuracy, zero-leak privacy enforcement, and credential redaction.
+* **[Assignment 1 vs. Assignment 2 Matrix](assignment-2/ASSIGNMENT_1_VS_ASSIGNMENT_2.md)**: Side-by-side comparison of capabilities, schemas, threat models, and UI changes.
+* **[Viva & Demo Guide](assignment-2/viva_demo_guide.md)**: Step-by-step evaluator demonstration script and technical Q&A for Assignment 2.
+* **[Assignment 2 Roadmap](assignment-2/ASSIGNMENT_2_ROADMAP.md)**: Strategic roadmap outlining future multi-agent collaborative workflows and supervisor-worker orchestration.

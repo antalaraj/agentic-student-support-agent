@@ -1,0 +1,79 @@
+MERIDIAN INSTITUTE OF MANAGEMENT - STUDENT HANDBOOK 2026-27
+*** FICTIONAL DEMONSTRATION DOCUMENT. These are not real institutional regulations. Created only for the Agentic AI Engineering Assignment 1. ***
+
+## 1. Fee Payment Rules [policy]
+Clause 1.1 Programme fees are payable per semester. The semester fee must be paid in full by the due date shown in the student's fee record, or under the approved instalment plan.
+Clause 1.2 Instalment plan: a student may pay in two instalments per semester. At least 50 percent of the semester fee is due by the first due date and the balance within 45 days.
+Clause 1.3 Accepted payment modes are the online payment portal, bank transfer (NEFT/RTGS) and demand draft in favour of the Institute. Cash is not accepted.
+Clause 1.4 A payment is marked "Paid" in the student record only after reconciliation by the Accounts Office, which normally takes up to 2 working days.
+Clause 1.5 Payment portal failure: if an online payment fails, the student must not retry repeatedly. The student should note the transaction reference, keep a screenshot, and raise a support ticket in the category fee_payment within 24 hours. If the Accounts Office verifies that the failure was caused by the portal, the payment may be made on the next working day and no late fee will be charged for that delay.
+Clause 1.6 If money is debited but the portal shows failure, the amount is reconciled or refunded to the original account within 5 to 7 working days.
+Clause 1.7 Fees once paid are not refundable, except for excess or duplicate payments, which are refunded after verification.
+
+## 2. Late Fee Policy [policy]
+Clause 2.1 A grace period of 7 calendar days applies after the due date. No late fee is charged during the grace period.
+Clause 2.2 After the grace period a late fee of Rs. 200 per day is charged on the overdue instalment. The total late fee is capped at 10 percent of the overdue amount.
+Clause 2.3 If dues remain unpaid for more than 30 days after the due date, the student's examination hall ticket may be withheld and placement registration is suspended until the dues are cleared.
+Clause 2.4 Late fee waiver: a student may request a waiver from the Accounts Office within 7 days of the due date, giving a valid reason such as a verified portal failure or a medical emergency with documents. The decision of the Accounts Office is final.
+
+## 3. Scholarship Application Procedure [policy]
+Clause 3.1 Scholarship applications are accepted through the Scholarship Cell during the first 4 weeks of each semester.
+Clause 3.2 Required documents: college ID, latest marksheet and, for need-based scholarships, family income proof. Sports scholarships need a verified sports certificate.
+Clause 3.3 Application status values are: Submitted, Documents Pending, Under Review, Approved, Rejected. Students are notified by institute email when the status changes.
+Clause 3.4 The Scholarship Committee decides within 21 working days after all documents are complete.
+Clause 3.5 A student can appeal a rejection once, in writing to the Scholarship Cell, within 10 days of the decision.
+Clause 3.6 An approved scholarship is adjusted against the semester fee. It is not paid out as cash.
+
+## 4. Scholarship Eligibility [policy]
+Clause 4.1 Merit Excellence Award: minimum CGPA of 3.5 and attendance of at least 85 percent in the previous semester.
+Clause 4.2 Need-Based Support Grant: annual family income of Rs. 6,00,000 or less, supported by income proof.
+Clause 4.3 Women in Data Fellowship: for women students enrolled in PGDM (Big Data Analytics) or PGDM (Artificial Intelligence & Data Science), minimum CGPA of 3.0.
+Clause 4.4 Sports Achievement Scholarship: for students with a verified state-level or higher sports achievement.
+Clause 4.5 Industry Partner Scholarship: for students in semester 3 or 4 who are selected for a project sponsored by an industry partner.
+Clause 4.6 A student may hold only one scholarship at a time. A scholarship is withdrawn if attendance falls below 75 percent or if disciplinary action is taken.
+
+## 5. Course and Programme Change Rules [policy]
+Clause 5.1 Elective change: a student may change an elective within the first 2 weeks of a semester using the course change form, with the approval of the faculty advisor and the Academic Office.
+Clause 5.2 Course withdrawal is not allowed after week 4 of the semester.
+Clause 5.3 Programme (specialisation) change: allowed only once, and only at the end of semester 1. The request must be submitted within 1 week of the semester 1 results.
+Clause 5.4 Conditions for a programme change: minimum CGPA of 3.0, available seats in the new programme, and no outstanding dues.
+Clause 5.5 No programme change is permitted in semesters 2, 3 or 4. Any fee difference between programmes must be paid before the change takes effect.
+Clause 5.6 Course change requests are processed by the Academic Office within 5 working days.
+
+## 6. Attendance Policy [policy]
+Clause 6.1 A minimum of 75 percent attendance is required in every course to be eligible for the end-term examination.
+Clause 6.2 Condonation: a student with attendance between 70 and 74 percent may apply for condonation with a medical certificate or other valid proof. Condonation is allowed once per programme and carries a fee of Rs. 1,000 per course.
+Clause 6.3 Attendance below 70 percent in a course makes the student ineligible for the end-term examination of that course.
+Clause 6.4 Scholarship holders must maintain at least 85 percent attendance for the Merit Excellence Award and at least 75 percent for other scholarships.
+Clause 6.5 Attendance is updated on the student portal every Monday.
+
+## 7. Examination Rules [policy]
+Clause 7.1 A valid college ID and the hall ticket are mandatory for every examination.
+Clause 7.2 The hall ticket is issued only to students who meet the attendance requirement and have no dues more than 30 days overdue.
+Clause 7.3 Mobile phones, smart watches and other electronic devices are not allowed in the examination hall, except an approved basic calculator when specified.
+Clause 7.4 Make-up examination: for a documented medical emergency, a student may apply for a make-up exam within 3 days of the missed examination.
+Clause 7.5 Results are published within 15 working days after the last examination.
+Clause 7.6 Re-evaluation: a student may apply within 5 working days of the result, with a fee of Rs. 500 per course.
+Clause 7.7 Use of unfair means leads to a zero score in the course and a disciplinary committee review.
+
+## 8. Student Support Procedures [policy]
+Clause 8.1 Students can raise a support request through the support ticket system, which gives a unique ticket ID such as TKT-YYYYMMDD-XXXXXX.
+Clause 8.2 Ticket categories are fee_payment, scholarship, academic, examination, technical and general.
+Clause 8.3 Standard response time is 2 working days. Tickets about fee holds or examination eligibility are treated as urgent and answered within 1 working day.
+Clause 8.4 If a ticket is not resolved, the student may escalate it to the Student Services Office and then to the Dean of Students.
+Clause 8.5 Contact offices: Accounts Office (accounts@meridian-demo.example), Scholarship Cell (scholarship@meridian-demo.example), Academic Office (academics@meridian-demo.example), Student Services Office (student.services@meridian-demo.example).
+Clause 8.6 Matters that are not covered by this handbook should be referred to the Student Services Office.
+
+## 9. Academic Programmes and Courses [academic]
+Clause 9.1 The PGDM programme runs for 4 semesters (2 years). Each semester carries 20 to 24 credits. Electives begin from semester 2.
+Clause 9.2 PGDM (Big Data Analytics) core courses: Statistics for Analytics, Python for Data Science, Databases and Big Data Platforms (Hadoop and Spark), Machine Learning, Data Visualisation. Electives: Natural Language Processing, Time Series Forecasting, Cloud Data Engineering.
+Clause 9.3 PGDM (Artificial Intelligence & Data Science) core courses: Statistics for Analytics, Python for Data Science, Machine Learning, Deep Learning, Agentic AI Engineering, MLOps. Electives: Generative AI Applications, Computer Vision, Responsible AI.
+Clause 9.4 PGDM (Marketing) core courses: Consumer Behaviour, Marketing Analytics, Brand Management, Digital Marketing. PGDM (Finance) core courses: Corporate Finance, Financial Modelling, Investment Analysis, Risk Management. PGDM (Human Resources) core courses: Organisational Behaviour, Talent Management, HR Analytics, Labour Laws.
+Clause 9.5 Each student is assigned a faculty advisor who approves electives and course changes.
+
+## 10. Placement and General Administration [academic]
+Clause 10.1 Placement registration opens in semester 3. To be eligible, a student must have no active backlogs, no dues more than 30 days overdue, and attendance of at least 75 percent.
+Clause 10.2 A summer internship of 8 weeks is expected after semester 2. The Placement Cell shares internship opportunities by email.
+Clause 10.3 Bonafide certificates are issued by the Academic Office within 3 working days of an online request.
+Clause 10.4 A replacement ID card costs Rs. 300 and takes 5 working days.
+Clause 10.5 The academic calendar is published on the student portal before each semester begins.
