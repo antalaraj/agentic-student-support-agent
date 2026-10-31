@@ -35,25 +35,257 @@ st.set_page_config(page_title="Safe Student Support Agent · Assignment 2", page
 
 CSS = """
 <style>
-:root { --navy:#0B1F3A; --blue:#1F4FBF; --soft:#EAF1FB; --success:#0E703C; --danger:#B81D13; --warning:#A16207; }
-.block-container { padding-top: 1.2rem; max-width: 1140px; }
-h1,h2,h3 { color: var(--navy); font-family: 'Segoe UI', system-ui, sans-serif; }
-.hero { background: linear-gradient(90deg, #0B1F3A, #1F4FBF); color:#fff; padding:18px 24px; border-radius:14px; margin-bottom:14px; }
-.hero h2 { color:#fff; margin:0; } .hero p { margin:4px 0 0; opacity:.92; }
-[data-testid="stChatMessage"] { border-radius: 14px; padding: 10px 14px; margin-bottom: 8px; background:#F7F9FC; border:1px solid #E1E8F3; }
-[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) { background: var(--soft); border-color:#C9D9F2; }
-.chip { display:inline-block; background:var(--soft); color:var(--navy); border:1px solid #C9D9F2; border-radius:999px; padding:2px 10px; margin:2px 4px 0 0; font-size:.78rem; font-weight:500; }
-.chip-sec { display:inline-block; background:#EBFBF3; color:#0E703C; border:1px solid #A4E2C6; border-radius:999px; padding:2px 10px; margin:2px 4px 0 0; font-size:.78rem; font-weight:600; }
-.chip-denied { display:inline-block; background:#FEEBEA; color:#B81D13; border:1px solid #F5B5B2; border-radius:999px; padding:2px 10px; margin:2px 4px 0 0; font-size:.78rem; font-weight:600; }
-.badge-role-admin { background:#F3E8FF; color:#6B21A8; border:1px solid #D8B4FE; border-radius:6px; padding:2px 8px; font-size:.75rem; font-weight:bold; }
-.badge-role-student { background:#E0F2FE; color:#0369A1; border:1px solid #BAE6FD; border-radius:6px; padding:2px 8px; font-size:.75rem; font-weight:bold; }
-.demo-banner { background:#FFF8E1; border:1px solid #F3DE9B; border-radius:8px; padding:8px 12px; font-size:.82rem; color:#5a4a00; margin-bottom:10px; }
-.approval-card { background:#FFFFFF; border:1px solid #CBD5E1; border-left:4px solid #F59E0B; border-radius:8px; padding:14px; margin-bottom:12px; }
-.approval-card-approved { border-left-color:#10B981; }
-.approval-card-rejected { border-left-color:#EF4444; }
-.auth-box { background:#FFFFFF; border:1px solid #E2E8F0; border-radius:12px; padding:24px; box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05); margin-top:20px; }
-section[data-testid="stSidebar"] { background:#F4F7FC; }
-@media (max-width: 640px) { .block-container { padding: .8rem .6rem; } .hero { padding:12px 14px; } }
+:root {
+    --navy: #0B1F3A;
+    --blue: #1F4FBF;
+    --soft: #EAF1FB;
+    --success: #0E703C;
+    --danger: #B81D13;
+    --warning: #A16207;
+}
+
+/* Ensure clean light background and deep navy text across all containers */
+html, body, [data-testid="stAppViewContainer"], .main {
+    background-color: #FFFFFF !important;
+    color: #0B1F3A !important;
+}
+.block-container {
+    padding-top: 1.2rem;
+    max-width: 1140px;
+    background-color: #FFFFFF !important;
+    color: #0B1F3A !important;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: var(--navy) !important;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+p, span, label {
+    color: #0B1F3A;
+}
+
+/* Sidebar styling matching Assignment 1 */
+section[data-testid="stSidebar"], [data-testid="stSidebar"] > div {
+    background-color: #F2F6FC !important;
+    color: #0B1F3A !important;
+}
+[data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] label, [data-testid="stSidebar"] span, [data-testid="stSidebar"] p {
+    color: #0B1F3A !important;
+}
+/* Radio buttons in sidebar */
+div[data-testid="stRadio"] label, div[data-testid="stRadio"] p, div[data-testid="stRadio"] span {
+    color: #0B1F3A !important;
+    font-weight: 500 !important;
+}
+div[data-testid="stRadio"] div[role="radiogroup"] label:hover {
+    background-color: #EAF1FB;
+    border-radius: 6px;
+}
+
+/* Hero banner matching Assignment 1 */
+.hero {
+    background: linear-gradient(90deg, #0B1F3A, #1F4FBF);
+    color: #FFFFFF !important;
+    padding: 18px 24px;
+    border-radius: 14px;
+    margin-bottom: 14px;
+}
+.hero h2 {
+    color: #FFFFFF !important;
+    margin: 0;
+}
+.hero p {
+    color: #FFFFFF !important;
+    margin: 4px 0 0;
+    opacity: 0.92;
+}
+
+/* Chat messages matching Assignment 1 */
+[data-testid="stChatMessage"] {
+    border-radius: 14px;
+    padding: 10px 14px;
+    margin-bottom: 8px;
+    background-color: #F7F9FC !important;
+    border: 1px solid #E1E8F3 !important;
+    color: #0B1F3A !important;
+}
+[data-testid="stChatMessage"] p, [data-testid="stChatMessage"] span, [data-testid="stChatMessage"] li {
+    color: #0B1F3A !important;
+}
+[data-testid="stChatMessage"]:has([data-testid="stChatMessageAvatarUser"]) {
+    background-color: var(--soft) !important;
+    border-color: #C9D9F2 !important;
+}
+
+/* Bottom chat input container */
+[data-testid="stBottom"], [data-testid="stBottom"] > div {
+    background-color: #FFFFFF !important;
+}
+[data-testid="stChatInput"] {
+    background-color: #FFFFFF !important;
+}
+[data-testid="stChatInput"] textarea {
+    color: #0B1F3A !important;
+    background-color: #FFFFFF !important;
+}
+
+/* Badges, chips, banners, and cards matching Assignment 1 */
+.chip {
+    display: inline-block;
+    background: var(--soft);
+    color: var(--navy) !important;
+    border: 1px solid #C9D9F2;
+    border-radius: 999px;
+    padding: 2px 10px;
+    margin: 2px 4px 0 0;
+    font-size: .78rem;
+    font-weight: 500;
+}
+.chip-sec {
+    display: inline-block;
+    background: #EBFBF3;
+    color: #0E703C !important;
+    border: 1px solid #A4E2C6;
+    border-radius: 999px;
+    padding: 2px 10px;
+    margin: 2px 4px 0 0;
+    font-size: .78rem;
+    font-weight: 600;
+}
+.chip-denied {
+    display: inline-block;
+    background: #FEEBEA;
+    color: #B81D13 !important;
+    border: 1px solid #F5B5B2;
+    border-radius: 999px;
+    padding: 2px 10px;
+    margin: 2px 4px 0 0;
+    font-size: .78rem;
+    font-weight: 600;
+}
+.badge-role-admin {
+    background: #F3E8FF;
+    color: #6B21A8 !important;
+    border: 1px solid #D8B4FE;
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-size: .75rem;
+    font-weight: bold;
+}
+.badge-role-student {
+    background: #E0F2FE;
+    color: #0369A1 !important;
+    border: 1px solid #BAE6FD;
+    border-radius: 6px;
+    padding: 2px 8px;
+    font-size: .75rem;
+    font-weight: bold;
+}
+.demo-banner {
+    background: #FFF8E1;
+    border: 1px solid #F3DE9B;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: .82rem;
+    color: #5a4a00 !important;
+    margin-bottom: 10px;
+}
+.demo-banner * {
+    color: #5a4a00 !important;
+}
+.approval-card {
+    background: #FFFFFF;
+    border: 1px solid #CBD5E1;
+    border-left: 4px solid #F59E0B;
+    border-radius: 8px;
+    padding: 14px;
+    margin-bottom: 12px;
+    color: #0B1F3A;
+}
+.approval-card-approved { border-left-color: #10B981; }
+.approval-card-rejected { border-left-color: #EF4444; }
+.auth-box {
+    background: #FFFFFF;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+    color: #0B1F3A;
+}
+.stExpander {
+    background-color: #FFFFFF !important;
+}
+
+/* Input fields (Username, Password, Search, etc.) */
+div[data-baseweb="input"], div[data-baseweb="base-input"] {
+    background-color: #FFFFFF !important;
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 8px !important;
+}
+div[data-baseweb="input"] input, div[data-baseweb="base-input"] input {
+    color: #0B1F3A !important;
+    background-color: #FFFFFF !important;
+    -webkit-text-fill-color: #0B1F3A !important;
+}
+div[data-baseweb="input"] input::placeholder {
+    color: #94A3B8 !important;
+    -webkit-text-fill-color: #94A3B8 !important;
+}
+
+/* Form submit button (Sign In, Submit) - Vibrant Royal Blue */
+div[data-testid="stFormSubmitButton"] button, button[kind="primary"] {
+    background-color: #1F4FBF !important;
+    color: #FFFFFF !important;
+    border: none !important;
+    font-weight: 600 !important;
+    border-radius: 8px !important;
+    box-shadow: 0 1px 3px rgba(31, 79, 191, 0.2) !important;
+}
+div[data-testid="stFormSubmitButton"] button:hover, button[kind="primary"]:hover {
+    background-color: #163B96 !important;
+    color: #FFFFFF !important;
+}
+div[data-testid="stFormSubmitButton"] button p, div[data-testid="stFormSubmitButton"] button span, button[kind="primary"] p {
+    color: #FFFFFF !important;
+}
+
+/* Secondary & Quick Login buttons - Clean Light Corporate Style */
+div[data-testid="stButton"] button, button[kind="secondary"] {
+    background-color: #F2F6FC !important;
+    color: #0B1F3A !important;
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 8px !important;
+    font-weight: 500 !important;
+}
+div[data-testid="stButton"] button:hover, button[kind="secondary"]:hover {
+    background-color: #E2ECF9 !important;
+    color: #1F4FBF !important;
+    border-color: #1F4FBF !important;
+}
+div[data-testid="stButton"] button p, div[data-testid="stButton"] button span, button[kind="secondary"] p {
+    color: #0B1F3A !important;
+}
+
+/* Code tags and demo credentials formatting */
+code {
+    background-color: #F1F5F9 !important;
+    color: #0F172A !important;
+    border: 1px solid #CBD5E1 !important;
+    border-radius: 4px !important;
+    padding: 2px 6px !important;
+    font-size: 0.85em !important;
+}
+pre {
+    background-color: #F8FAFC !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 8px !important;
+}
+
+@media (max-width: 640px) {
+    .block-container { padding: .8rem .6rem; }
+    .hero { padding: 12px 14px; }
+}
 </style>
 """
 st.markdown(CSS, unsafe_allow_html=True)
